@@ -873,6 +873,12 @@ a.btn-white:focus {
 
 /* IMAC
    ================================================== */
+.anchor{
+  display: block;
+  height: 90px; /*same height as header*/
+  margin-top: -90px; /*same height as header*/
+  visibility: hidden;
+}
 
 .row-imac {
     margin-top: 50px;
