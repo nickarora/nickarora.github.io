@@ -1,0 +1,29 @@
+title: Nick Arora
+description: >-
+  Software engineer specializing in full stack web application
+baseurl: ""
+url: "https://nickarora.github.io/"
+linkedin_username: nickaroraesq
+
+source: _app
+destination: _site
+include:
+  - _pages
+
+defaults:
+  - scope:
+      path: "_pages/index.html"
+    values:
+      is_index: true
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      permalink: /:basename
+      is_site: true
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: post
+      permalink: /blog/:title

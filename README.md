@@ -1,2 +1,1 @@
-# Site for Nick Arora
-
+# Nick Arora
