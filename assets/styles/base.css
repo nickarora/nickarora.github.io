@@ -1,0 +1,18 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  color: #151414;
+  background-color: #FAF9F6;
+  padding: 2rem;
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.social-media svg {
+  color: #151414;
+}
+
+/*# sourceMappingURL=base.css.map */
