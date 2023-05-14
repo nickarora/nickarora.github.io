@@ -13,6 +13,8 @@ GEM
     forwardable-extended (2.6.0)
     google-protobuf (3.23.0-arm64-darwin)
     google-protobuf (3.23.0-x86_64-linux)
+    htmlbeautifier (1.4.2)
+    htmlcompressor (0.4.0)
     http_parser.rb (0.8.0)
     i18n (1.13.0)
       concurrent-ruby (~> 1.0)
@@ -34,6 +36,10 @@ GEM
       webrick (~> 1.7)
     jekyll-sass-converter (3.0.0)
       sass-embedded (~> 1.54)
+    jekyll-tidy (0.2.2)
+      htmlbeautifier
+      htmlcompressor
+      jekyll
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     kramdown (2.4.0)
@@ -69,6 +75,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll
+  jekyll-tidy
 
 BUNDLED WITH
    2.4.6
