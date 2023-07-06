@@ -13,5 +13,5 @@ install-gems.sh
 To run the jekyll server locally, run
 
 ```bash
-bundle exec jekyll serve
+start.sh
 ```
