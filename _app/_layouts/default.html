@@ -21,8 +21,16 @@
   </head>
 
   <body>
+    <header>
+      <h1>Nick Arora</h1>
+      <p>Software engineer specializing in full stack web applications</p>
+    </header>
     <main id="content">
       {{ content }}
     </main>
+    <footer>
+      {% include social-media.html %}
+      {% include copyright.html %}
+    </footer>
   </body>
 </html>

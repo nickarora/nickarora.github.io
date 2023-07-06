@@ -2,11 +2,10 @@
 layout: default
 ---
 
-<section>
-  <h1>Nick Arora</h1>
-  <p>Software engineer specializing in full stack web applications</p>
-</section>
-
-<footer>
-  {% include social-media.html %}
-</footer>
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>

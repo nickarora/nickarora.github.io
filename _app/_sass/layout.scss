@@ -1,13 +1,59 @@
-body {
-  font-family: "Open Sans", sans-serif;
-  font-size: 16px;
-  color: #151414;
-  background-color: #FAF9F6;
-  padding: 2rem;
+:root {
+  --clr-primary: #ee6352;
+  --clr-secondary: #d16e8d;
+  --clr-accent: #7e7ee5;
+  --clr-gradient: linear-gradient(-90deg, var(--clr-primary), var(--clr-secondary));
+  --clr-code-bg: #222;
+  --clr-code-fg: #F7F7FF;
+  --ff-title: bungee, sans-serif;
+  --fw-title: 800;
+  --ff-body: canada-type-gibson, sans-serif;
+  --fw-body: 300;
+}
 
-  main {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
+body {
+  min-height: 100vh;
+  font-family: var(--ff-body);
+  font-weight: var(--fw-body);
+  font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+
+  padding: 2rem;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover,
+a:focus {
+  color: var(--clr-accent);
+}
+
+:focus {
+  outline: 3px solid var(--clr-accent);
+  outline-offset: 3px;
+}
+
+h1, h2, h3, p, pre, ul {
+  margin: 1em 0 0 0;
+}
+
+h1, h2, h3 {
+  font-family: var(--ff-title);
+  font-weight: var(--fw-title);
+}
+
+pre {
+  font-family: monospace;
+  font-size: 0.85em;
+  padding: 1rem;
+  color: var(--clr-code-fg);
+  background: var(--clr-code-bg);
+}
+
+ul {
+  padding-left: 1em;
 }
