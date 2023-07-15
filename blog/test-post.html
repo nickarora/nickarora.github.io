@@ -9,19 +9,31 @@
     <link rel="stylesheet" href="/assets/styles/base.css">
   </head>
   <body>
-    <header>
-      <h1>Nick Arora</h1>
+    <header class="primary-header">
+      <h1>
+        <a href="/">Nick Arora</a>
+      </h1>
       <p>Software engineer specializing in full stack web applications</p>
+      <nav class="social-media">
+        <a href="https://www.linkedin.com/in/nickaroraesq" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+      </nav>
     </header>
-    <main id="content">
-      <article>
+    <main class="primary-content">
+      <article class="post flow">
         <header>
-          <h1>Test post</h1>
-          <p>February 13, 2023</p>
+          <h2>Test post</h1>
+          <time datetime="2023-02-13 00:00:00 +0000">February 13, 2023</time>
         </header>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus proin nibh nisl condimentum. Morbi tristique senectus et netus et malesuada fames. Risus feugiat in ante metus dictum at tempor commodo. Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Magna fringilla urna porttitor rhoncus dolor purus. Sit amet porttitor eget dolor morbi non arcu. Aliquam ut porttitor leo a diam sollicitudin tempor.</p>
-        <h2 id="bar">Bar</h2>
-        <p>Id neque aliquam vestibulum morbi. Arcu vitae elementum curabitur vitae nunc sed velit dignissim. Venenatis tellus in metus vulputate eu scelerisque felis. Neque laoreet suspendisse interdum consectetur libero id faucibus. Cras adipiscing enim eu turpis egestas pretium aenean pharetra magna. Dui accumsan sit amet nulla facilisi morbi tempus. Justo eget magna fermentum iaculis eu non. A erat nam at lectus urna duis convallis. Fusce id velit ut tortor pretium viverra suspendisse. Ipsum dolor sit amet consectetur adipiscing elit. Ultrices mi tempus imperdiet nulla malesuada pellentesque.</p>
+        <p><img src="https://placekitten.com/750/425" alt="Some alt text" /></p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lectus proin nibh nisl condimentum. Morbi tristique senectus et netus et <a href="https://www.google.com">malesuada</a> fames. Risus feugiat in ante metus dictum at tempor commodo. Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Magna fringilla <a href="#">urna porttitor rhoncus</a> dolor purus. Sit amet porttitor eget dolor morbi non arcu. Aliquam ut porttitor leo a diam sollicitudin tempor.</p>
+        <blockquote>
+          <p>Hell is other people.</p>
+        </blockquote>
+        <h3 id="bar">Bar</h3>
+        <p>Id neque aliquam vestibulum morbi. Arcu vitae elementum curabitur vitae nunc sed velit dignissim. Venenatis tellus in metus vulputate eu scelerisque felis. Neque laoreet suspendisse interdum consectetur libero id faucibus.</p>
+        <p>Cras adipiscing enim eu turpis egestas pretium aenean pharetra magna. Dui accumsan sit amet nulla facilisi morbi tempus. Justo eget magna fermentum iaculis eu non. A erat nam at lectus urna duis convallis. Fusce id velit ut tortor pretium viverra suspendisse. Ipsum dolor sit amet consectetur adipiscing elit. Ultrices mi tempus imperdiet nulla malesuada pellentesque.</p>
         <div class="language-ruby highlighter-rouge">
           <div class="highlight">
             <pre class="highlight"><code><span class="k">def</span> <span class="nf">some_method</span><span class="p">(</span><span class="n">some_argument</span><span class="p">)</span>
@@ -33,8 +45,13 @@
 </code></pre>
           </div>
         </div>
-        <h2 id="baz">Baz</h2>
-        <p>Non arcu risus quis varius quam quisque id. Odio pellentesque diam volutpat commodo sed egestas egestas. Enim lobortis scelerisque fermentum dui faucibus in ornare. Mollis nunc sed id semper risus. Non enim praesent elementum facilisis leo vel fringilla est ullamcorper. Commodo odio aenean sed adipiscing diam. Sed enim ut sem viverra aliquet eget sit. Porta non pulvinar neque laoreet suspendisse interdum. Sapien et ligula ullamcorper malesuada. Suspendisse interdum consectetur libero id faucibus nisl tincidunt. Tortor condimentum lacinia quis vel eros donec ac odio tempor.</p>
+        <h3 id="baz">Baz</h3>
+        <p>Non arcu risus quis varius quam quisque id. Odio pellentesque diam volutpat commodo sed egestas egestas. Enim lobortis scelerisque fermentum dui faucibus in ornare. Mollis nunc sed id semper risus. Non enim praesent elementum facilisis leo vel fringilla est ullamcorper.</p>
+        <blockquote>
+          <p>Three can keep a secret, if two of them are dead.</p>
+          <p>- Benjamin Franklin</p>
+        </blockquote>
+        <p>Commodo odio aenean sed adipiscing diam. Sed enim ut sem viverra aliquet eget sit. Porta non pulvinar neque laoreet suspendisse interdum. Sapien et ligula ullamcorper malesuada. Suspendisse interdum consectetur libero id faucibus nisl tincidunt. Tortor condimentum lacinia quis vel eros donec ac odio tempor.</p>
         <ul>
           <li>List Item 1</li>
           <li>List Item 2</li>
@@ -42,12 +59,7 @@
         </ul>
       </article>
     </main>
-    <footer>
-      <nav class="social-media">
-        <a href="https://www.linkedin.com/in/nickaroraesq" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-        </a>
-      </nav>
+    <footer class="primary-footer">
       © 2023 Nick Arora
     </footer>
   </body>
