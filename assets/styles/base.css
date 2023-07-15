@@ -114,6 +114,9 @@ a {
 color: var(--clr, var(--clr-primary));
 text-decoration-skip-ink: auto;
 }
+.flow > * + * {
+margin-top: var(--flow-spacer);
+}
 .primary-header {
 background-color: var(--clr-primary);
 padding: 1rem;
@@ -129,9 +132,6 @@ gap: 1rem;
 padding: 1rem;
 background-color: var(--clr-primary);
 }
-.flow > * + * {
-margin-top: var(--flow-spacer);
-}
 .post-previews {
 padding: 1rem;
 }
@@ -140,11 +140,11 @@ margin: 1.5rem auto;
 max-width: 60ch;
 padding: 0 1.5rem;
 }
-.post > header time {
+.post header time {
 font-size: var(--fw-1);
 font-style: italic;
 }
-.post > blockquote {
+.post blockquote {
 box-shadow: inset 3px 0 0 0 var(--clr-primary);
 padding-left: 1rem;
 font-style: italic;
