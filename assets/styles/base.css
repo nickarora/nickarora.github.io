@@ -62,15 +62,16 @@ font-weight: 600;
 src: url("../fonts/oswald-v49-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 :root {
---clr-primary: steelblue;
+--clr-primary: tomato;
 --clr-neutral: #262626;
+--clr-background: #F9F3E6;
 --ff-body: "Source Serif 4", serif;
 --ff-header: "Oswald", sans-serif;
 --fs-1: 1rem;
 --fs-2: 1.25rem;
 --fs-3: 2.5rem;
 --fs-4: 3rem;
---fs-5: 5rem;
+--fs-5: 4rem;
 --fw-1: 300;
 --fw-2: 400;
 --fw-3: 600;
@@ -83,6 +84,7 @@ body {
 display: grid;
 grid-template-rows: auto 1fr auto;
 min-height: 100vh;
+background-color: var(--clr-background);
 /* font sizes */
 text-rendering: optimizeSpeed;
 font-family: var(--ff-body);
@@ -118,7 +120,6 @@ text-decoration-skip-ink: auto;
 margin-top: var(--flow-spacer);
 }
 .primary-header {
-background-color: var(--clr-primary);
 padding: 1rem;
 }
 .primary-header h1 a {
@@ -126,22 +127,27 @@ padding: 1rem;
 text-decoration: none;
 }
 .primary-footer {
-display: flex;
-align-items: center;
-gap: 1rem;
+display: grid;
+justify-content: center;
+border-top: 1px solid var(--clr-neutral);
+gap: 0.5rem;
 padding: 1rem;
-background-color: var(--clr-primary);
+}
+.social-media {
+--clr: var(--clr-neutral);
+margin: 0 auto;
 }
 .post-previews {
 padding: 1rem;
 }
 .post {
-margin: 1.5rem auto;
-max-width: 60ch;
+margin: 1.5rem auto 3rem auto;
+max-width: 75ch;
 padding: 0 1.5rem;
 }
 .post header time {
-font-size: var(--fw-1);
+font-size: var(--fs-1);
+font-weight: var(--fw-1);
 font-style: italic;
 }
 .post blockquote {
@@ -345,7 +351,4 @@ color: #f92672;
 .highlight .gi {
 color: #a6e22e;
 } /* Generic.Inserted & Diff Inserted */
-.social-media svg {
-color: #151414;
-}
 /*# sourceMappingURL=base.css.map */
