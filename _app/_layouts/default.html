@@ -21,16 +21,19 @@
   </head>
 
   <body>
-    <header>
-      <h1>Nick Arora</h1>
+    <header class="primary-header">
+      <h1>
+        <a href="/">Nick Arora</a>
+      </h1>
       <p>Software engineer specializing in full stack web applications</p>
+
     </header>
-    <main id="content">
+    <main class="primary-content">
       {{ content }}
     </main>
-    <footer>
-      {% include social-media.html %}
+    <footer class="primary-footer">
       {% include copyright.html %}
+      {% include social-media.html %}
     </footer>
   </body>
 </html>

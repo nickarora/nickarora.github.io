@@ -2,10 +2,10 @@
 layout: default
 ---
 
-<article>
+<article class="post flow">
   <header>
-    <h1>{{ page.title | escape }}</h1>
-    <p>{{ page.date | date: "%B %d, %Y" }}</p>
+    <time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time>
+    <h2>{{ page.title | escape }}</h1>
   </header>
 
   {{ content }}

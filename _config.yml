@@ -27,3 +27,7 @@ defaults:
     values:
       layout: post
       permalink: /blog/:title
+
+assets:
+   sources:
+       -assets/fonts
