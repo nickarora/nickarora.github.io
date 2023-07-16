@@ -87,6 +87,14 @@ hr {
   margin: 0 auto;
 }
 
+.page-not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
 .primary-header {
   background-color: var(--clr-primary);
   padding: 0.5rem 0;
