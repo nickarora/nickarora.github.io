@@ -1,7 +1,8 @@
 :root {
-  --clr-primary: tomato;
-  --clr-neutral: #262626;
-  --clr-background: #F9F3E6;
+  --clr-foreground: #262626;
+  --clr-background: #f5f7fa;
+  --clr-primary: #dde4ee;
+  --clr-accent: #467ece;
 
   --ff-body: 'Source Serif 4', serif;
   --ff-header: 'Oswald', sans-serif;
@@ -15,6 +16,7 @@
   --fw-3: 600;
 
   --flow-spacer: 1em;
+  --container-max-width: 75ch;
 }
 
 html {
@@ -26,15 +28,13 @@ body {
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
   background-color: var(--clr-background);
-
-  /* font sizes */
   text-rendering: optimizeSpeed;
   font-family: var(--ff-body);
   font-size: var(--fs-2);
   font-weight: var(--fw-2);
   line-height: 1.75;
   letter-spacing: -0.25px;
-  color: var(--clr-neutral);
+  color: var(--clr-foreground);
 }
 
 h1, h2, h3 {
@@ -56,38 +56,71 @@ h1, h2, h3 {
   font-size: var(--fs-3);
 }
 
-ul {
+ul, ol {
   padding-left: 1rem;
 }
 
 a {
-  color: var(--clr, var(--clr-primary));
+  color: var(--clr-foreground);
+  text-decoration-color: var(--clr-accent);
   text-decoration-skip-ink: auto;
+  text-decoration-thickness: 3px;
+}
+
+hr {
+  border-top: 1px dashed var(--clr-foreground);
+}
+
+:not(.highlight) > code {
+  font-style: italic;
+  padding: 0 0.25em;
+  background-color: var(--clr-primary);
 }
 
 .flow > *+* {
   margin-top: var(--flow-spacer);
 }
 
-.primary-header {
-  padding: 1rem;
+.container {
+  max-width: var(--container-max-width);
+  padding: 0 1.5rem;
+  margin: 0 auto;
+}
 
-  h1 a {
-    --clr: var(--clr-neutral);
-    text-decoration: none;
+.primary-header {
+  background-color: var(--clr-primary);
+  padding: 0.5rem 0;
+
+  & > section {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+  }
+
+  a {
+    text-decoration-line: none;
+
+    &:hover {
+      text-decoration-line: underline;
+    }
+  }
+
+  nav {
+    display: flex;
+    gap: 1rem;
   }
 }
 
 .primary-footer {
   display: grid;
   justify-content: center;
-  border-top: 1px solid var(--clr-neutral);
+  background-color: var(--clr-primary);
   gap: 0.5rem;
   padding: 1rem;
 }
 
 .social-media {
-  --clr: var(--clr-neutral);
   margin: 0 auto;
 }
 
@@ -96,9 +129,8 @@ a {
 }
 
 .post {
-  margin: 1.5rem auto 3rem auto;
-  max-width: 75ch;
-  padding: 0 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
 
   header time {
     font-size: var(--fs-1);
@@ -107,7 +139,7 @@ a {
   }
 
   blockquote {
-    box-shadow: inset 3px 0 0 0 var(--clr-primary);
+    box-shadow: inset 4px 0 0 0 var(--clr-accent);
     padding-left: 1rem;
     font-style: italic;
   }
