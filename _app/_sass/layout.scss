@@ -1,22 +1,24 @@
 :root {
-  --clr-foreground: #262626;
-  --clr-background: #f5f7fa;
-  --clr-primary: #dde4ee;
-  --clr-accent: #467ece;
+  --clr-foreground: #1a1a1a;
+  --clr-background: #eee9e2;
+  --clr-primary: #e4d3b5;
+  --clr-accent: #daab5b;
 
   --ff-body: 'Source Serif 4', serif;
   --ff-header: 'Oswald', sans-serif;
-  --fs-1: 1rem;
-  --fs-2: 1.25rem;
+
+  --fs-1: 0.875rem;
+  --fs-2: 1.125rem;
   --fs-3: 2.5rem;
   --fs-4: 3rem;
   --fs-5: 4rem;
+
   --fw-1: 300;
   --fw-2: 400;
   --fw-3: 600;
 
   --flow-spacer: 1em;
-  --container-max-width: 75ch;
+  --container-max-width: 84ch;
 }
 
 html {
@@ -96,7 +98,7 @@ hr {
 }
 
 .primary-header {
-  background-color: var(--clr-primary);
+  background-color: var(--clr-background);
   padding: 0.5rem 0;
 
   & > section {
@@ -123,7 +125,7 @@ hr {
 .primary-footer {
   display: grid;
   justify-content: center;
-  background-color: var(--clr-primary);
+  background-color: var(--clr-background);
   gap: 0.5rem;
   padding: 1rem;
 }
