@@ -62,21 +62,40 @@ font-weight: 600;
 src: url("../fonts/oswald-v49-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 :root {
+/* palette */
 --clr-foreground: #1a1a1a;
 --clr-background: #eee9e2;
 --clr-primary: #e4d3b5;
 --clr-accent: #daab5b;
+/* code highlighting */
+--clr-code-background: #171e29;
+--clr-code-error: #e74343;
+--clr-code-background-error: transparent;
+--clr-code-comment: #ffa8a8;
+--clr-code-constant: #eee9e2;
+--clr-code-literal: #e6db74;
+--clr-code-name: #eee9e2;
+--clr-code-operator: #ffa8a8;
+--clr-code-date: #e6db74;
+--clr-code-other: #3aeaac;
+}
+:root {
+/* fonts */
 --ff-body: "Source Serif 4", serif;
 --ff-header: "Oswald", sans-serif;
+/* font sizes */
 --fs-1: 0.875rem;
 --fs-2: 1.125rem;
 --fs-3: 2.5rem;
 --fs-4: 3rem;
 --fs-5: 4rem;
+/* font weights */
 --fw-1: 300;
 --fw-2: 400;
 --fw-3: 600;
---flow-spacer: 1em;
+}
+:root {
+--flow-spacer: 1.5em;
 --container-max-width: 84ch;
 }
 html {
@@ -121,6 +140,9 @@ text-decoration-thickness: 3px;
 }
 hr {
 border-top: 1px dashed var(--clr-foreground);
+}
+strong {
+font-weight: var(--fw-3);
 }
 :not(.highlight) > code {
 font-style: italic;
@@ -192,18 +214,6 @@ font-style: italic;
 padding: 1rem;
 font-family: monospace;
 font-size: var(--fs-1);
-}
-:root {
---clr-code-background: #272822;
---clr-code-error: #960050;
---clr-code-background-error: #1e0010;
---clr-code-comment: #75715e;
---clr-code-constant: #66d9ef;
---clr-code-literal: #ae81ff;
---clr-code-name: #f8f8f2;
---clr-code-operator: #f92672;
---clr-code-date: #e6db74;
---clr-code-other: #a6e22e;
 }
 .highlight pre {
 background-color: var(--clr-code-background);
