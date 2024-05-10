@@ -1,26 +1,3 @@
-:root {
-  --clr-foreground: #1a1a1a;
-  --clr-background: #eee9e2;
-  --clr-primary: #e4d3b5;
-  --clr-accent: #daab5b;
-
-  --ff-body: 'Source Serif 4', serif;
-  --ff-header: 'Oswald', sans-serif;
-
-  --fs-1: 0.875rem;
-  --fs-2: 1.125rem;
-  --fs-3: 2.5rem;
-  --fs-4: 3rem;
-  --fs-5: 4rem;
-
-  --fw-1: 300;
-  --fw-2: 400;
-  --fw-3: 600;
-
-  --flow-spacer: 1em;
-  --container-max-width: 84ch;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -71,6 +48,10 @@ a {
 
 hr {
   border-top: 1px dashed var(--clr-foreground);
+}
+
+strong {
+  font-weight: var(--fw-3);
 }
 
 :not(.highlight) > code {

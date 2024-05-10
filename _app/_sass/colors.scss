@@ -1,0 +1,19 @@
+:root {
+  /* palette */
+  --clr-foreground: #1a1a1a;
+  --clr-background: #eee9e2;
+  --clr-primary: #e4d3b5;
+  --clr-accent: #daab5b;
+
+  /* code highlighting */
+  --clr-code-background: #171e29;
+  --clr-code-error: #e74343;
+  --clr-code-background-error: transparent;
+  --clr-code-comment: #ffa8a8;
+  --clr-code-constant: #eee9e2;
+  --clr-code-literal: #e6db74;
+  --clr-code-name: #eee9e2;
+  --clr-code-operator: #ffa8a8;
+  --clr-code-date: #e6db74;
+  --clr-code-other: #3aeaac;
+}

@@ -1,16 +1,3 @@
-:root {
-  --clr-code-background: #272822;
-  --clr-code-error: #960050;
-  --clr-code-background-error: #1e0010;
-  --clr-code-comment: #75715e;
-  --clr-code-constant: #66d9ef;
-  --clr-code-literal: #ae81ff;
-  --clr-code-name: #f8f8f2;
-  --clr-code-operator: #f92672;
-  --clr-code-date: #e6db74;
-  --clr-code-other: #a6e22e;
-}
-
 .highlight pre { background-color: var(--clr-code-background); }
 .highlight .hll { background-color: var(--clr-code-background); }
 .highlight .c { color: var(--clr-code-comment); } /* Comment */
