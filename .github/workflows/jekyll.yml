@@ -25,7 +25,7 @@ jobs:
           bundler-cache: true
 
       - name: 🔨 Install dependencies
-        run : bundle install
+        run : bundle install --without development test
 
       - name: 🔨 Build site
         run : bundle exec jekyll build
