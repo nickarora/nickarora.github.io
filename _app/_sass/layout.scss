@@ -131,7 +131,8 @@ strong {
 
   blockquote {
     box-shadow: inset 4px 0 0 0 var(--clr-accent);
-    padding-left: 1rem;
+    background-color: var(--clr-secondary);
+    padding: 1em;
     font-style: italic;
   }
 
