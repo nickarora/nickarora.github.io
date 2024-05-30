@@ -116,6 +116,9 @@ line-height: 1.75;
 letter-spacing: -0.25px;
 color: var(--clr-foreground);
 }
+body > * {
+overflow: auto;
+}
 h1, h2, h3 {
 font-family: var(--ff-header);
 font-weight: var(--fw-3);
