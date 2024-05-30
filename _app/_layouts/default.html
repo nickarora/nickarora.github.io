@@ -10,6 +10,9 @@
     {% include page-title.html %}
 
     <link rel="stylesheet" href="/assets/styles/base.css">
+    <link rel="preload" href="/assets/fonts/oswald-semibold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/source-serif-4-variable-italic.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/source-serif-4-variable.woff2" as="font" type="font/woff2" crossorigin>
 
     {% for css in layout.css %}
       <link rel="stylesheet" href="/assets/styles/{{ css }}" />
