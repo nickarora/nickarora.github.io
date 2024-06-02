@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<article class="container flow">
+  <h1>{{ page.tag-name }}</h1>
+  <ul>
+    {% for post in site.posts %}
+      {% if post.tags contains page.tag-name %}
+        <li>
+          <p>
+            {{ post.title }}
+            (<time datetime="{{ post.date }}">{{ post.date | date: "%B %d, %Y" }}</time>)
+          </p>
+          <a href="{{ post.url }}">
+            Read more
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</article>

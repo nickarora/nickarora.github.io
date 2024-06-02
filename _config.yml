@@ -10,6 +10,11 @@ destination: _site
 include:
   - _pages
 
+collections:
+  tags:
+    output: true
+    permalink: /tag/:name
+
 defaults:
   - scope:
       path: "_pages/index.html"
@@ -27,6 +32,11 @@ defaults:
     values:
       layout: post
       permalink: /blog/:title
+  - scope:
+      path: "_tags"
+      type: tags
+    values:
+      layout: tag
 
 assets:
    sources:
