@@ -15,7 +15,7 @@ layout: default
   {% if page.tags != empty  %}
     <div class="tags">
       {% for tag in page.tags %}
-        <a href="/tag/{{ tag }}" class="tag">
+        <a href="/tag/{{ tag | replace: ' ', '-' }}" class="tag">
           {{ tag }}
         </a>
       {% endfor %}
