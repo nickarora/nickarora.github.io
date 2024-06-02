@@ -7,17 +7,18 @@ layout: default
     <h1>{{ page.title | escape }}</h1>
     <div class="subheader">
       <time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time>
-      {% if page.tags != empty  %}
-        <div class="tags">
-          {% for tag in page.tags %}
-            <a href="/tag/{{ tag }}" class="tag">
-              {{ tag }}
-            </a>
-          {% endfor %}
-        </div>
-      {% endif %}
     </div>
   </header>
 
   {{ content }}
+
+  {% if page.tags != empty  %}
+    <div class="tags">
+      {% for tag in page.tags %}
+        <a href="/tag/{{ tag }}" class="tag">
+          {{ tag }}
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
 </article>
