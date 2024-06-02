@@ -15,12 +15,22 @@ def generate_tags(post)
   tags = post["tags"]
   tags = tags.reject(&:empty?)
 
+  generated_tags.each do |generated_tag|
+    if tags.include?(generated_tag)
+      next
+    end
+
+    filename = "#{tags_directory}/#{generated_tag}#{tag_file_extension}"
+    File.delete(filename)
+  end
+
   tags.each do |tag|
     if generated_tags.include?(tag)
       next
     end
 
-    File.open("#{tags_directory}/#{tag}#{tag_file_extension}", "wb") do |file|
+    filename = "#{tags_directory}/#{tag}#{tag_file_extension}"
+    File.open(filename, "wb") do |file|
       file.puts("---")
       file.puts("tag-name: #{tag}")
       file.puts("---")
