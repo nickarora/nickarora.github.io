@@ -204,14 +204,35 @@ margin: 0 auto;
 .post-previews {
 padding: 1rem;
 }
+.tags {
+display: flex;
+flex-direction: row;
+gap: 0.25rem;
+}
+.tags a.tag {
+display: inline-block;
+padding: 0 0.5rem;
+background-color: var(--clr-primary);
+font-size: var(--fs-1);
+text-decoration: none;
+border-radius: 0.25rem;
+}
+.tags a.tag:hover {
+background-color: var(--clr-accent);
+}
 .post {
 margin-top: 1.5rem;
 margin-bottom: 3rem;
 }
+.post header .subheader {
+display: flex;
+flex-direction: column;
+padding-top: 1rem;
+gap: 0.25rem;
+}
 .post header time {
-font-size: var(--fs-1);
+font-size: var(--fs-2);
 font-weight: var(--fw-1);
-font-style: italic;
 }
 .post blockquote {
 box-shadow: inset 4px 0 0 0 var(--clr-accent);
