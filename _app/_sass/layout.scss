@@ -62,12 +62,6 @@ em {
   font-style: italic;
 }
 
-:not(.highlight) > code {
-  font-style: italic;
-  padding: 0 0.25em;
-  background-color: var(--clr-primary);
-}
-
 .flow > *+* {
   margin-top: var(--flow-spacer);
 }
@@ -173,6 +167,7 @@ em {
 
   pre {
     padding: 1rem;
+    overflow-x: scroll;
     font-family: monospace;
     font-size: var(--fs-1);
   }
