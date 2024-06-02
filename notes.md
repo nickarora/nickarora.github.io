@@ -1,6 +1,5 @@
 # Notes
 
-- [ ] Support light and dark syntax highlighting
-- [ ] Support light and dark mode
-- [ ] Support for post tags
+- [ ] Replace monospace font with Arimo Nerd Font
+- [ ] Toggle light and dark mode
 - [ ] Landing page
