@@ -165,9 +165,9 @@ em {
   }
 
   pre {
-    padding: 1rem;
+    padding: 1em 2em;
     overflow-x: scroll;
-    font-family: monospace;
+    font-family: var(--ff-code);
     font-size: var(--fs-1);
   }
 }
