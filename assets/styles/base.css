@@ -152,11 +152,6 @@ font-weight: var(--fw-4);
 em {
 font-style: italic;
 }
-:not(.highlight) > code {
-font-style: italic;
-padding: 0 0.25em;
-background-color: var(--clr-primary);
-}
 .flow > * + * {
 margin-top: var(--flow-spacer);
 }
@@ -242,6 +237,7 @@ font-style: italic;
 }
 .post pre {
 padding: 1rem;
+overflow-x: scroll;
 font-family: monospace;
 font-size: var(--fs-1);
 }
