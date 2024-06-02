@@ -22,7 +22,6 @@ def generate_tags(post)
 
     File.open("#{tags_directory}/#{tag}#{tag_file_extension}", "wb") do |file|
       file.puts("---")
-      file.puts("layout: tag")
       file.puts("tag-name: #{tag}")
       file.puts("---")
     end
