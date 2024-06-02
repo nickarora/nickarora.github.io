@@ -42,6 +42,12 @@ font-weight: 600;
 font-style: normal;
 font-display: fallback;
 }
+@font-face {
+font-family: "Roboto Mono";
+src: url("../fonts/roboto-mono.woff2") format("woff2");
+font-style: normal;
+font-display: fallback;
+}
 :root {
 /* palette */
 --clr-foreground: #1a1a1a;
@@ -84,6 +90,7 @@ font-display: fallback;
 /* fonts */
 --ff-body: "Source Serif 4", serif;
 --ff-header: "Oswald", sans-serif;
+--ff-code: "Roboto Mono", monospace;
 /* font sizes */
 --fs-1: 0.875rem;
 --fs-2: 1.125rem;
@@ -235,9 +242,9 @@ padding: 1em;
 font-style: italic;
 }
 .post pre {
-padding: 1rem;
+padding: 1em 2em;
 overflow-x: scroll;
-font-family: monospace;
+font-family: var(--ff-code);
 font-size: var(--fs-1);
 }
 .highlight pre {
