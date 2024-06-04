@@ -357,7 +357,6 @@ padding: 0 1.5rem;
 margin: 0 auto;
 }
 .primary-header {
-background-color: var(--clr-background);
 padding: 0.5rem 0;
 }
 .primary-header > section {
@@ -378,7 +377,6 @@ gap: 1rem;
 .primary-footer {
 display: grid;
 justify-content: center;
-background-color: var(--clr-background);
 gap: 0.5rem;
 padding: 1rem;
 }
