@@ -9,7 +9,6 @@
 }
 
 .primary-header {
-  background-color: var(--clr-background);
   padding: 0.5rem 0;
 
   & > section {
@@ -36,7 +35,6 @@
 .primary-footer {
   display: grid;
   justify-content: center;
-  background-color: var(--clr-background);
   gap: 0.5rem;
   padding: 1rem;
 }
