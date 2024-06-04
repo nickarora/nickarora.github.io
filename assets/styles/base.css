@@ -87,6 +87,9 @@ font-display: fallback;
 .dark {
 color-scheme: dark;
 }
+.light {
+color-scheme: light;
+}
 .highlight pre {
 background-color: var(--clr-code-background);
 }
