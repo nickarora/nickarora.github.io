@@ -1,0 +1,41 @@
+<label id="theme-toggle">
+  <input type="checkbox" />
+</label>
+
+<script>
+  const dark = "dark"
+  const light = "light"
+  const themeKey = "theme"
+
+  const toggle = document.getElementById("theme-toggle")
+  const checkbox = toggle.querySelector("input")
+
+  function loadTheme() {
+    const theme = localStorage.getItem(themeKey)
+
+    if (!theme || theme === light) {
+      checkbox.checked = false
+    } else {
+      checkbox.checked = true
+    }
+
+    const body = document.body
+    body.setAttribute("class", theme)
+  }
+
+  checkbox.addEventListener("change", function() {
+    const body = document.body
+
+    if (this.checked) {
+      localStorage.setItem(themeKey, dark)
+      loadTheme()
+    } else {
+      localStorage.setItem(themeKey, light)
+      loadTheme()
+    }
+  })
+
+  window.addEventListener("load", () => {
+    loadTheme()
+  })
+</script>
