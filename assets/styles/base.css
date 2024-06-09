@@ -90,6 +90,9 @@ color-scheme: dark;
 .light {
 color-scheme: light;
 }
+body {
+transition: background-color 0.2s, color 0.4s ease-in-out;
+}
 .highlight pre {
 background-color: var(--clr-code-background);
 }
@@ -345,6 +348,33 @@ justify-content: center;
 text-align: center;
 height: 100%;
 }
+#theme-toggle {
+height: 1.5rem;
+width: 1.5rem;
+overflow: hidden;
+position: relative;
+border-radius: 0.25rem;
+padding: 0 0.25rem;
+background-color: var(--clr-foreground);
+color: var(--clr-background);
+}
+#theme-toggle > input {
+display: none;
+}
+#theme-toggle .icons {
+transition: 0.1s;
+}
+#theme-toggle .icons * {
+margin-top: 2px;
+width: 1.25rem;
+height: 1.25rem;
+}
+#theme-toggle input[type=checkbox]:checked + .icons {
+transform: translateY(-1.4rem);
+}
+#theme-toggle:hover {
+cursor: pointer;
+}
 .social-media {
 margin: 0 auto;
 }
@@ -372,6 +402,7 @@ text-decoration-line: underline;
 }
 .primary-header nav {
 display: flex;
+align-items: center;
 gap: 1rem;
 }
 .primary-footer {
