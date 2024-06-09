@@ -90,9 +90,6 @@ color-scheme: dark;
 .light {
 color-scheme: light;
 }
-body {
-transition: background-color 0.2s, color 0.4s ease-in-out;
-}
 .highlight pre {
 background-color: var(--clr-code-background);
 }
@@ -374,6 +371,9 @@ transform: translateY(-1.4rem);
 }
 #theme-toggle:hover {
 cursor: pointer;
+}
+body {
+transition: background-color 0.2s, color 0.4s ease-in-out;
 }
 .social-media {
 margin: 0 auto;
