@@ -359,12 +359,16 @@ color: var(--clr-background);
 display: none;
 }
 #theme-toggle .icons {
+height: 2rem;
 transition: 0.1s;
 }
 #theme-toggle .icons * {
-margin-top: 2px;
+margin: 2px 0;
 width: 1.25rem;
 height: 1.25rem;
+}
+#theme-toggle .icons .moon {
+padding: 0 1px 1px 1px;
 }
 #theme-toggle input[type=checkbox]:checked + .icons {
 transform: translateY(-1.4rem);
