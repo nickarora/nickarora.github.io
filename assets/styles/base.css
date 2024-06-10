@@ -423,13 +423,26 @@ margin-top: 1.5rem;
 margin-bottom: 3rem;
 }
 .post header .subheader {
+--horizontal-spacing: 0.75rem;
 display: flex;
-flex-direction: column;
+flex-direction: row;
+align-items: center;
+gap: var(--horizontal-spacing);
 padding-top: 0.5rem;
-}
-.post header time {
 font-size: var(--fs-2);
 font-weight: var(--fw-1);
+}
+.post header .subheader * + * {
+display: flex;
+align-items: center;
+}
+.post header .subheader * + *:before {
+content: "";
+display: inline-block;
+height: 1rem;
+width: 1px;
+margin-right: var(--horizontal-spacing);
+background-color: currentColor;
 }
 .post blockquote {
 box-shadow: inset 4px 0 0 0 var(--clr-accent);
