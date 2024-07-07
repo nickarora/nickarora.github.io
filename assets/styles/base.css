@@ -463,7 +463,7 @@ font-display: fallback;
   }
   .post-previews li + li {
   border-top: 1px solid transparent;
-  border-image: linear-gradient(to right, var(--clr-foreground) 50%, var(--clr-accent), transparent) 1;
+  border-image: linear-gradient(to right, var(--clr-foreground) 60%, transparent) 1;
   }
   .post header .subheader {
   --horizontal-spacing: 0.75rem;
