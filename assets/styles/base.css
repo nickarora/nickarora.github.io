@@ -338,6 +338,9 @@ font-weight: var(--fw-4);
 em {
 font-style: italic;
 }
+.capitalize {
+text-transform: capitalize;
+}
 .page-not-found {
 display: flex;
 flex-direction: column;
@@ -409,6 +412,10 @@ display: flex;
 align-items: center;
 gap: 1rem;
 }
+.primary-content {
+margin-top: 1.5rem;
+margin-bottom: 3rem;
+}
 .primary-footer {
 display: grid;
 justify-content: center;
@@ -417,10 +424,6 @@ padding: 1rem;
 }
 .post-previews {
 padding: 1rem;
-}
-.post {
-margin-top: 1.5rem;
-margin-bottom: 3rem;
 }
 .post header .subheader {
 --horizontal-spacing: 0.75rem;
