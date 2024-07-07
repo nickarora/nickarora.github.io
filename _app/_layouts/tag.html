@@ -3,7 +3,7 @@ layout: default
 ---
 
 <article class="container flow">
-  <h1>{{ page.tag-name }}</h1>
+  <h1 class="capitalize">{{ page.tag-name }}</h1>
   <ul>
     {% for post in site.posts %}
       {% if post.tags contains page.tag-name %}
