@@ -1,6 +1,7 @@
 ---
 title:  "Other Test post"
 date: 2023-05-14
+summary: Some other sentence that summarizes the article
 tags:
 - foo
 - some tag

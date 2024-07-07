@@ -4,10 +4,30 @@
   li {
     list-style: none;
     padding: 1em 0;
+
+    time {
+      display: block;
+      font-size: var(--fs-1);
+      font-weight: var(--fw-1);
+      margin-bottom: 0.25rem;
+    }
+
+    header {
+      font-weight: var(--fw-3);
+    }
+
+    p {
+      font-weight: var(--fw-1);
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 1rem;
+    }
   }
 
   li + li {
-    border-top: solid 1px var(--clr-foreground);
+    border-top: 1px solid color-mix(in srgb, var(--clr-foreground) 50%, var(--clr-background));
   }
 }
 
