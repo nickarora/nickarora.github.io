@@ -462,8 +462,7 @@ font-display: fallback;
   margin-top: 1rem;
   }
   .post-previews li + li {
-  border-top: 1px solid transparent;
-  border-image: linear-gradient(to right, var(--clr-foreground) 60%, transparent) 1;
+  border-top: 1px solid color-mix(in srgb, var(--clr-foreground) 50%, var(--clr-background));
   }
   .post header .subheader {
   --horizontal-spacing: 0.75rem;
