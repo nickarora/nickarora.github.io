@@ -2,21 +2,9 @@
 layout: default
 ---
 
+{% assign filtered_posts = site.posts | where_exp: "post", "post.tags contains page.tag-name" %}
+
 <article class="container flow">
   <h1 class="capitalize">{{ page.tag-name }}</h1>
-  <ul>
-    {% for post in site.posts %}
-      {% if post.tags contains page.tag-name %}
-        <li>
-          <p>
-            {{ post.title }}
-            (<time datetime="{{ post.date }}">{{ post.date | date: "%B %d, %Y" }}</time>)
-          </p>
-          <a href="{{ post.url }}">
-            Read more
-          </a>
-        </li>
-      {% endif %}
-    {% endfor %}
-  </ul>
+  {% include post-previews.html posts=filtered_posts %}
 </article>

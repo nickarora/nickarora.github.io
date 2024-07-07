@@ -1,5 +1,14 @@
 .post-previews {
-  padding: 1rem;
+  padding: 0;
+
+  li {
+    list-style: none;
+    padding: 1em 0;
+  }
+
+  li + li {
+    border-top: solid 1px var(--clr-foreground);
+  }
 }
 
 .post {

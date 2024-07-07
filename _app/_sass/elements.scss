@@ -51,7 +51,15 @@ a {
 }
 
 hr {
-  border-top: 1px dashed var(--clr-foreground);
+  border: none;
+  text-align: center;
+
+  &:before {
+    content: "\2022 \2022 \2022";
+    font-size: 1.5rem;
+    letter-spacing: 0.75rem;
+    color: var(--clr-foreground);
+  }
 }
 
 strong {

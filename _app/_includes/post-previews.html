@@ -1,0 +1,13 @@
+<ul class="post-previews">
+  {% for post in include.posts %}
+    <li>
+      <p>
+        {{ post.title }}
+        (<time datetime="{{ post.date }}">{{ post.date | date: "%B %d, %Y" }}</time>)
+      </p>
+      <a href="{{ post.url }}">
+        Read more
+      </a>
+    </li>
+  {% endfor %}
+</ul>

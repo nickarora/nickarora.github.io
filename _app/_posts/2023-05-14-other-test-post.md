@@ -1,9 +1,8 @@
 ---
-title:  "Test post"
-date: 2023-05-13
+title:  "Other Test post"
+date: 2023-05-14
 tags:
 - foo
-- bar
 - some tag
 ---
 

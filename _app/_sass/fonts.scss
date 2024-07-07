@@ -48,3 +48,15 @@
   --fw-3: 600;
   --fw-4: 800;
 }
+
+@media (width < 600px) {
+  :root {
+    font-size: 16px;
+  }
+}
+
+@media (width >= 600px) {
+  :root {
+    font-size: 20px;
+  }
+}
