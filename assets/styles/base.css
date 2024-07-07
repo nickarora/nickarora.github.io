@@ -57,9 +57,9 @@ font-display: fallback;
 /* font sizes */
 --fs-1: 0.875rem;
 --fs-2: 1.125rem;
---fs-3: 2.5rem;
---fs-4: 3rem;
---fs-5: 4rem;
+--fs-3: 2rem;
+--fs-4: 2.5rem;
+--fs-5: 3rem;
 /* font weights */
 --fw-1: 300;
 --fw-2: 400;
@@ -445,8 +445,25 @@ font-display: fallback;
   list-style: none;
   padding: 1em 0;
   }
+  .post-previews li time {
+  display: block;
+  font-size: var(--fs-1);
+  font-weight: var(--fw-1);
+  margin-bottom: 0.25rem;
+  }
+  .post-previews li header {
+  font-weight: var(--fw-3);
+  }
+  .post-previews li p {
+  font-weight: var(--fw-1);
+  }
+  .post-previews li a {
+  display: inline-block;
+  margin-top: 1rem;
+  }
   .post-previews li + li {
-  border-top: solid 1px var(--clr-foreground);
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(to right, var(--clr-foreground) 50%, var(--clr-accent), transparent) 1;
   }
   .post header .subheader {
   --horizontal-spacing: 0.75rem;
