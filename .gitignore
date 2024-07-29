@@ -1,6 +1,7 @@
 .bundle
 gems
 tmp
+material
 
 _site
 .sass-cache
