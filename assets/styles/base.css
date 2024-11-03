@@ -401,7 +401,11 @@ font-display: fallback;
   transition: background-color 0.2s, color 0.4s ease-in-out;
   }
   .social-media {
-  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  }
+  .social-media a {
+  color: inherit;
   }
   .flow > * + * {
   margin-top: var(--flow-spacer);
@@ -413,7 +417,7 @@ font-display: fallback;
   }
   .primary-header {
   padding: 0.5rem 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   }
   .primary-header > section {
   display: flex;
@@ -432,11 +436,13 @@ font-display: fallback;
   gap: 1rem;
   }
   .primary-footer {
-  display: grid;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 1rem;
-  margin-top: 3rem;
+  padding: 0.5rem 0;
+  margin-top: 1rem;
+  }
+  .primary-footer > * {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1em;
   }
   .post-previews {
   padding: 0;
@@ -444,6 +450,9 @@ font-display: fallback;
   .post-previews li {
   list-style: none;
   padding: 1em 0;
+  }
+  .post-previews li:first-child {
+  padding-top: 0;
   }
   .post-previews li time {
   display: block;
