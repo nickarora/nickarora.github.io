@@ -5,6 +5,10 @@
     list-style: none;
     padding: 1em 0;
 
+    &:first-child {
+      padding-top: 0;
+    }
+
     time {
       display: block;
       font-size: var(--fs-1);

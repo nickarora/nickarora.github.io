@@ -27,10 +27,8 @@
   <body>
     <header class="primary-header">
       <section class="container">
-        <a href="/">na</a>
+        <a href="/">nick arora</a>
         <nav>
-          <a href="#">blog</a>
-          <a href="#">projects</a>
           {% include theme-toggle.html %}
         </nav>
       </div>
@@ -39,8 +37,10 @@
       {{ content }}
     </main>
     <footer class="primary-footer">
-      {% include copyright.html %}
-      {% include social-media.html %}
+      <section class="container">
+        {% include social-media.html %}
+        {% include copyright.html %}
+      </section>
     </footer>
   </body>
 </html>
