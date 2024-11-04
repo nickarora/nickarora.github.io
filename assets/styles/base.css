@@ -470,9 +470,6 @@ font-display: fallback;
   font-weight: var(--fw-1);
   margin-top: -0.25em;
   }
-  .post-previews li + li {
-  border-top: 1px solid color-mix(in srgb, var(--clr-foreground) 50%, var(--clr-background));
-  }
   .post .post-metadata {
   font-size: var(--fs-2);
   font-weight: var(--fw-1);
