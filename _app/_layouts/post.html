@@ -5,9 +5,9 @@ layout: default
 <article class="post container flow">
   <header>
     <h1>{{ page.title | escape }}</h1>
-    <div class="subheader">
+    <div class="post-metadata">
       <time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time>
-      {% include reading-time.html %}
+      {% include reading-time.html content=page.content %}
     </div>
   </header>
 

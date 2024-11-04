@@ -1,18 +1,20 @@
 <ul class="post-previews">
   {% for post in include.posts %}
     <li>
-      <time datetime="{{ post.date }}">{{ post.date | date: "%B %d, %Y" }}</time>
       <header>
-        {{ post.title }}
+        <a href="{{ post.url }}">
+          {{ post.title }}
+        </a>
+        <div class="post-metadata">
+          <time datetime="{{ post.date }}">{{ post.date | date: "%B %d, %Y" }}</time>
+          {% include reading-time.html content=post.content %}
+        </div>
       </header>
       {% if post.summary %}
         <p class="summary">
           {{ post.summary }}
         </p>
       {%- endif -%}
-      <a href="{{ post.url }}">
-        Read more
-      </a>
     </li>
   {% endfor %}
 </ul>
