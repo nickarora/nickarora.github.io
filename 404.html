@@ -39,10 +39,10 @@
             function loadTheme() {
               const theme = localStorage.getItem(themeKey)
 
-              if (!theme || theme === light) {
-                checkbox.checked = false
-              } else {
+              if (theme == dark) {
                 checkbox.checked = true
+              } else {
+                checkbox.checked = false
               }
 
               const body = document.body
