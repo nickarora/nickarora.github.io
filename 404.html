@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Software engineer specializing in full stack web application" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
     <title>Nick Arora</title>
     <link rel="stylesheet" href="/assets/styles/base.css">
     <link rel="preload" href="/assets/fonts/oswald-semibold.woff2" as="font" type="font/woff2" crossorigin>
@@ -47,7 +51,7 @@
 
             checkbox.addEventListener("change", function() {
               const body = document.body
-              const reloadTheme = setTimeout(() => loadTheme(), 200);
+              const reloadTheme = () => setTimeout(() => loadTheme(), 200);
 
               if (this.checked) {
                 localStorage.setItem(themeKey, dark)
