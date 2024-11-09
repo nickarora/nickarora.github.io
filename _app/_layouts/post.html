@@ -6,7 +6,7 @@ layout: default
   <header>
     <h1>{{ page.title | escape }}</h1>
     <div class="post-metadata">
-      <time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time>
+      <time datetime="{{ page.date }}">{{ page.date | date: "%B %-d, %Y" }}</time>
       {% include reading-time.html content=page.content %}
     </div>
   </header>
