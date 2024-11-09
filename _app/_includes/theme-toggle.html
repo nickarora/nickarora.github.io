@@ -15,13 +15,9 @@
   const checkbox = toggle.querySelector("input")
 
   function loadTheme() {
-    const theme = localStorage.getItem(themeKey)
+    let theme = localStorage.getItem(themeKey) ?? 'light'
 
-    if (!theme || theme === light) {
-      checkbox.checked = false
-    } else {
-      checkbox.checked = true
-    }
+    checkbox.checked = theme === dark
 
     const body = document.body
     body.setAttribute("class", theme)
