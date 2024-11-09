@@ -7,7 +7,7 @@ if [[ -z "$1" ]]; then
 fi
 
 # Default output filename
-output_filename="formatted-book-cover.png"
+output_filename="formatted-book-cover.webp"
 
 # Parse arguments for optional output filename
 while [[ $# -gt 0 ]]; do
@@ -62,7 +62,8 @@ magick -size 1800x800 gradient:"$background_color1-$background_color2-$backgroun
 # Step 7: Overlay a white background with 80% opacity over the gradient
 base_image="base.png"
 magick -size 900x400 canvas:white \
-  \( "$gradient_background" -compose over -gravity center -alpha set -channel Alpha -evaluate set 80 % \) -composite \
+  \( "$gradient_background" -alpha set -channel A -evaluate multiply 0.8 +channel \) \
+  -compose over -gravity center -composite \
   "$base_image"
 
 # Step 8: Overlay the framed book cover in the center of the base image
