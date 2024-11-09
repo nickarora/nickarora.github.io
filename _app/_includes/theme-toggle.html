@@ -29,7 +29,7 @@
 
   checkbox.addEventListener("change", function() {
     const body = document.body
-    const reloadTheme = setTimeout(() => loadTheme(), 200);
+    const reloadTheme = () => setTimeout(() => loadTheme(), 200);
 
     if (this.checked) {
       localStorage.setItem(themeKey, dark)

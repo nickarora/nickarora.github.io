@@ -35,7 +35,3 @@
     background-color: color-mix(in lab, var(--clr-background) 20%, var(--clr-accent));
   }
 }
-
-body {
-  transition: background-color .2s, color .4s ease-in-out;
-}
