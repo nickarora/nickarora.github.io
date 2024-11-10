@@ -1,7 +1,7 @@
 ---
 title: "Turn the Ship Around! by David Marquet"
 date: 2024-11-04
-summary: A book that offers a fresh perspective on leadership, centered around building empowered, accountable teams
+summary: A fresh perspective on leadership, centered around building empowered, accountable teams
 tags:
 - books
 - leadership
