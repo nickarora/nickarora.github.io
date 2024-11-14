@@ -27,7 +27,7 @@ tags:
       bottom: 0;
       left: 0;
       right: 0;
-      height: 0.86em;
+      height: calc(var(--fs-3) * 1.75 * 0.5);
       backdrop-filter: blur(12px);
 
       &.hide {
@@ -48,6 +48,10 @@ tags:
 @media (width < 600px) {
   .toyota-kata-perception-example .censored-text {
     font-size: var(--fs-2);
+
+    .censor {
+      height: calc(var(--fs-2) * 1.75 * 0.5);
+    }
   }
 }
 </style>
@@ -83,7 +87,7 @@ Rather, their success stemmed from a _mindset_ that permeated decision-making at
 
 The term “scientific thinking” might conjure images of lab coats and microscopes, but Rother describes it in a more practical, everyday sense. It’s a way of thinking that helps people achieve challenging goals _despite their natural biases_.
 
-Consider the following sentence:
+Try reading the following phrase:
 
 <section class="toyota-kata-perception-example">
   <main class="censored-text">
