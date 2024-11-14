@@ -1,0 +1,15 @@
+button {
+  padding: 0.1em 0.5em;
+  background-color: var(--clr-background);
+  color: var(--clr-foreground);
+  border: 1px solid var(--clr-foreground);
+
+  &:hover {
+    cursor: pointer;
+    background-color: light-dark(var(--clr-accent), var(--clr-primary));
+  }
+
+  &.small {
+    font-size: var(--fs-1);
+  }
+}
