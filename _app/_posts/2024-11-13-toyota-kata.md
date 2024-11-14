@@ -44,6 +44,12 @@ tags:
     margin-top: 0.5rem;
   }
 }
+
+@media (width < 600px) {
+  .toyota-kata-perception-example .censored-text {
+    font-size: var(--fs-2);
+  }
+}
 </style>
 
 <script>
