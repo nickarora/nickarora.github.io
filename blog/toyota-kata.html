@@ -95,7 +95,7 @@
                 bottom: 0;
                 left: 0;
                 right: 0;
-                height: 0.86em;
+                height: calc(var(--fs-3) * 1.75 * 0.5);
                 backdrop-filter: blur(12px);
 
                 &.hide {
@@ -116,6 +116,10 @@
           @media (width < 600px) {
             .toyota-kata-perception-example .censored-text {
               font-size: var(--fs-2);
+
+              .censor {
+                height: calc(var(--fs-2) * 1.75 * 0.5);
+              }
             }
           }
         </style>
@@ -142,7 +146,7 @@
         <p>Rather, their success stemmed from a <em>mindset</em> that permeated decision-making at every level of the organization. In his book <em>Toyota Kata</em>, Rother explains Toyota’s philosophy and shares practical techniques to leverage their wisdom.</p>
         <h2 id="the-secret-scientific-thinking">The Secret: Scientific Thinking</h2>
         <p>The term “scientific thinking” might conjure images of lab coats and microscopes, but Rother describes it in a more practical, everyday sense. It’s a way of thinking that helps people achieve challenging goals <em>despite their natural biases</em>.</p>
-        <p>Consider the following sentence:</p>
+        <p>Try reading the following phrase:</p>
         <section class="toyota-kata-perception-example">
           <main class="censored-text">
             <p>IUMRING TQ GQNGIUSIQNS</p>
