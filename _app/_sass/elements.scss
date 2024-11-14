@@ -10,7 +10,7 @@ body {
   text-rendering: optimizeSpeed;
   font-family: var(--ff-body);
   font-size: var(--fs-2);
-  line-height: 1.75;
+  line-height: var(--lh-3);
   letter-spacing: -0.25px;
   color: var(--clr-foreground);
 
@@ -30,7 +30,7 @@ body {
 h1, h2, h3 {
   font-family: var(--ff-header);
   font-weight: var(--fw-3);
-  line-height: 1.1;
+  line-height: var(--lh-1);
   letter-spacing: -0.75px;
 }
 
