@@ -448,6 +448,7 @@ font-display: fallback;
   padding: 0.1em 0.5em;
   background-color: var(--clr-background);
   color: var(--clr-foreground);
+  border: 1px solid var(--clr-foreground);
   }
   button:hover {
   cursor: pointer;
