@@ -308,13 +308,18 @@ font-display: fallback;
   text-rendering: optimizeSpeed;
   font-family: var(--ff-body);
   font-size: var(--fs-2);
-  font-weight: var(--fw-2);
   line-height: 1.75;
   letter-spacing: -0.25px;
   color: var(--clr-foreground);
   }
   body > * {
   overflow: auto;
+  }
+  body.light {
+  font-weight: var(--fw-2);
+  }
+  body.dark {
+  font-weight: var(--fw-1);
   }
   h1, h2, h3 {
   font-family: var(--ff-header);
@@ -350,8 +355,11 @@ font-display: fallback;
   letter-spacing: 0.75rem;
   color: var(--clr-foreground);
   }
-  strong {
+  .light strong {
   font-weight: var(--fw-4);
+  }
+  .dark strong {
+  font-weight: var(--fw-3);
   }
   em {
   font-style: italic;
