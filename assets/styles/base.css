@@ -444,6 +444,18 @@ font-display: fallback;
   justify-content: flex-end;
   gap: 1em;
   }
+  button {
+  padding: 0.1em 0.5em;
+  background-color: var(--clr-background);
+  color: var(--clr-foreground);
+  }
+  button:hover {
+  cursor: pointer;
+  background-color: light-dark(var(--clr-accent), var(--clr-primary));
+  }
+  button.small {
+  font-size: var(--fs-1);
+  }
   .post-previews {
   padding: 0;
   }
