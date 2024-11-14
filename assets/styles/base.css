@@ -65,6 +65,9 @@ font-display: fallback;
 --fw-2: 400;
 --fw-3: 600;
 --fw-4: 800;
+--lh-1: 1.1;
+--lh-2: 1.2;
+--lh-3: 1.75;
 }
 @media (width < 600px) {
   :root {
@@ -308,7 +311,7 @@ font-display: fallback;
   text-rendering: optimizeSpeed;
   font-family: var(--ff-body);
   font-size: var(--fs-2);
-  line-height: 1.75;
+  line-height: var(--lh-3);
   letter-spacing: -0.25px;
   color: var(--clr-foreground);
   }
@@ -324,7 +327,7 @@ font-display: fallback;
   h1, h2, h3 {
   font-family: var(--ff-header);
   font-weight: var(--fw-3);
-  line-height: 1.1;
+  line-height: var(--lh-1);
   letter-spacing: -0.75px;
   }
   .h1, h1 {
@@ -482,6 +485,7 @@ font-display: fallback;
   }
   .post-previews li p {
   font-weight: var(--fw-1);
+  line-height: var(--lh-2);
   }
   .post-previews li .post-metadata {
   font-size: var(--fs-1);
