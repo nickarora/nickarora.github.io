@@ -22,67 +22,45 @@ video {
 display: block;
 max-width: 100%;
 }
-@font-face {
-font-family: "Source Serif 4";
-src: url("../fonts/source-serif-4-variable.woff2") format("woff2");
-font-display: fallback;
-font-weight: 200 900;
-font-style: normal;
-}
-@font-face {
-font-family: "Source Serif 4";
-src: url("../fonts/source-serif-4-variable-italic.woff2") format("woff2");
-font-weight: 200 900;
-font-style: italic;
-font-display: fallback;
-}
-@font-face {
-font-family: "Oswald";
-src: url("../fonts/oswald-semibold.woff2") format("woff2");
-font-weight: 600;
-font-style: normal;
-font-display: fallback;
-}
-@font-face {
-font-family: "Roboto Mono";
-src: url("../fonts/roboto-mono.woff2") format("woff2");
-font-style: normal;
-font-display: fallback;
-}
 :root {
 /* fonts */
---ff-body: "Source Serif 4", serif;
+--ff-body: "Source Sans 3", sans-serif;
 --ff-header: "Oswald", sans-serif;
---ff-code: "Roboto Mono", monospace;
+--ff-code: "JetBrains Mono", monospace;
 /* font sizes */
---fs-1: 0.875rem;
---fs-2: 1.125rem;
---fs-3: 2rem;
---fs-4: 2.5rem;
+--fs-1: 0.75rem;
+--fs-2: 1rem;
+--fs-3: 1.75rem;
+--fs-4: 2.25rem;
 --fs-5: 3rem;
 /* font weights */
---fw-1: 300;
---fw-2: 400;
---fw-3: 600;
---fw-4: 800;
+--fw-1: 200;
+--fw-2: 300;
+--fw-3: 400;
+--fw-4: 600;
 --lh-1: 1.1;
 --lh-2: 1.4;
 --lh-3: 1.75;
 }
-@media (width < 600px) {
+@media (width <= 720px) {
   :root {
     font-size: 16px;
   }
 }
-@media (width >= 600px) {
+@media (width <= 1440px) {
   :root {
-  font-size: 20px;
+    font-size: 20px;
+  }
+}
+@media (width > 1440px) {
+  :root {
+  font-size: 24px;
   }
   }
   :root {
   /* palette */
-  --clr-background: light-dark(#eee9e2, #171e29);
-  --clr-foreground: light-dark(#1a1a1a, #eee9e2);
+  --clr-background: light-dark(#fff, #171e29);
+  --clr-foreground: light-dark(#1a1a1a, #fff);
   --clr-primary: light-dark(#e4d3b5, #39506f);
   --clr-secondary: light-dark(#f3f0eb, #212c3d);
   --clr-accent: light-dark(#daab5b, #eca52d);
@@ -91,9 +69,9 @@ font-display: fallback;
   --clr-code-error: light-dark(#d72828, #e74343);
   --clr-code-background-error: light-dark(transparent, transparent);
   --clr-code-comment: light-dark(#5479a2, #ffa8a8);
-  --clr-code-constant: light-dark(#1a1a1a, #eee9e2);
+  --clr-code-constant: light-dark(#1a1a1a, #fff);
   --clr-code-literal: light-dark(#bd882d, #e6db74);
-  --clr-code-name: light-dark(#1a1a1a, #eee9e2);
+  --clr-code-name: light-dark(#1a1a1a, #fff);
   --clr-code-operator: light-dark(#bd882d, #e6db74);
   --clr-code-date: light-dark(#bd882d, #e6db74);
   --clr-code-other: light-dark(#15844b, #3aeaac);
@@ -298,7 +276,7 @@ font-display: fallback;
   /* Generic Heading & Diff Header */
   :root {
   --flow-spacer: 1.5em;
-  --container-max-width: 84ch;
+  --container-max-width: 960px;
   }
   html {
   scroll-behavior: smooth;
@@ -307,22 +285,23 @@ font-display: fallback;
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
+  color: var(--clr-foreground);
   background-color: var(--clr-background);
   text-rendering: optimizeSpeed;
   font-family: var(--ff-body);
   font-size: var(--fs-2);
+  font-weight: var(--fw-2);
   line-height: var(--lh-3);
   letter-spacing: -0.25px;
-  color: var(--clr-foreground);
+  }
+  body.dark {
+  font-weight: var(--fw-1);
   }
   body > * {
   overflow: auto;
   }
-  body.light {
-  font-weight: var(--fw-2);
-  }
-  body.dark {
-  font-weight: var(--fw-1);
+  strong {
+  font-weight: var(--fw-4);
   }
   h1, h2, h3 {
   font-family: var(--ff-header);
@@ -357,12 +336,6 @@ font-display: fallback;
   font-size: 1.5rem;
   letter-spacing: 0.75rem;
   color: var(--clr-foreground);
-  }
-  .light strong {
-  font-weight: var(--fw-4);
-  }
-  .dark strong {
-  font-weight: var(--fw-3);
   }
   em {
   font-style: italic;

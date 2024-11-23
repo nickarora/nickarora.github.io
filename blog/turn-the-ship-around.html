@@ -10,132 +10,133 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="/assets/favicon/site.webmanifest">
     <title>Turn the Ship Around! by David Marquet | Nick Arora</title>
-    <link rel="stylesheet" href="/assets/styles/base.css">
-    <link rel="preload" href="/assets/fonts/oswald-semibold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/assets/fonts/source-serif-4-variable-italic.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/assets/fonts/source-serif-4-variable.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/assets/fonts/roboto-mono.woff2" as="font" type="font/woff2" crossorigin>
-  </head>
-  <body>
-    <header class="primary-header">
-      <section class="container">
-        <a href="/">nick arora</a>
-        <nav>
-          <label id="theme-toggle">
-            <input type="checkbox" />
-            <div class="icons">
-              <svg class="sun" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
-              <svg class="moon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            </div>
-          </label>
-          <script>
-            const dark = "dark"
-            const light = "light"
-            const themeKey = "theme"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400&&family=JetBrains+Mono:wght@200;300&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap">
+      <link rel="stylesheet" href="/assets/styles/base.css">
+    </head>
+    <body>
+      <header class="primary-header">
+        <section class="container">
+          <a href="/">nick arora</a>
+          <nav>
+            <label id="theme-toggle">
+              <input type="checkbox" />
+              <div class="icons">
+                <svg class="sun" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
+                <svg class="moon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+              </div>
+            </label>
+            <script>
+              const dark = "dark"
+              const light = "light"
+              const themeKey = "theme"
 
-            const toggle = document.getElementById("theme-toggle")
-            const checkbox = toggle.querySelector("input")
+              const toggle = document.getElementById("theme-toggle")
+              const checkbox = toggle.querySelector("input")
 
-            function loadTheme() {
-              let theme = localStorage.getItem(themeKey) ?? 'light'
+              function loadTheme() {
+                let theme = localStorage.getItem(themeKey) ?? 'light'
 
-              checkbox.checked = theme === dark
+                checkbox.checked = theme === dark
 
-              const body = document.body
-              body.setAttribute("class", theme)
-            }
-
-            checkbox.addEventListener("change", function() {
-              const body = document.body
-              const reloadTheme = () => setTimeout(() => loadTheme(), 200);
-
-              if (this.checked) {
-                localStorage.setItem(themeKey, dark)
-                reloadTheme()
-              } else {
-                localStorage.setItem(themeKey, light)
-                reloadTheme()
+                const body = document.body
+                body.setAttribute("class", theme)
               }
-            })
 
-            document.addEventListener("DOMContentLoaded", () => {
-              loadTheme()
-            })
-          </script>
-        </nav>
-      </div>
-    </header>
-    <main class="primary-content">
-      <article class="post container flow">
-        <header>
-          <h1>Turn the Ship Around! by David Marquet</h1>
-          <div class="post-metadata">
-            <time datetime="2024-11-04 00:00:00 +0000">November 4, 2024</time>
-            <span>
-              4 min read
-            </span>
-          </div>
-        </header>
-        <p><img src="/assets/images/books/turn-the-ship-around.webp" alt="Some alt text" /></p>
-        <p>When you think of places ripe for leadership experiments, a nuclear submarine probably isn’t the first thing that springs to mind. Yet, this is exactly where David Marquet, a former U.S. Navy submarine captain, redefined leadership by challenging the traditional command-and-control model. His book, <em>Turn the Ship Around!</em>, recounts this transformation and offers a fresh perspective on how leaders can empower their teams for outstanding results.</p>
-        <h2 id="from-leader-follower-to-leader-leader">From Leader-Follower to Leader-Leader</h2>
-        <p>In most traditional organizations, the structure is simple: the leader gives orders and the followers execute. This is effective when the leader knows everything about every situation—but let’s face it, how often is that the case? Marquet experienced firsthand the limitations of this model when he took command of the <a href="https://en.wikipedia.org/wiki/USS_Santa_Fe_(SSN-763)">USS Santa Fe</a>, which was at the time the worst-performing submarine in the U.S. Navy. Faced with a crew that was unmotivated and disempowered, he realized that a different approach was necessary.</p>
-        <p>Instead of following the standard “leader-follower” model, Marquet pioneered a “leader-leader” model. In this approach, leadership isn’t about issuing orders from the top down but empowering every team member to think, decide, and take ownership of their work. The underlying idea is simple: when you push decision-making down to where the information lives, the team is happier and performs better.</p>
-        <blockquote>
-          <p>“The leader-leader structure is fundamentally different from the leader-follower structure. At its core is the belief that we can all be leaders and, in fact, it’s best when we all are leaders.”</p>
-        </blockquote>
-        <h2 id="competence-clarity-and-control">Competence, Clarity, and Control</h2>
-        <p>A key theme in Marquet’s approach is the balance of competence, clarity, and control. Marquet readily admits that decentralizing control carries risk. Team members can’t make sound decisions if they aren’t clear about the organization’s overarching goals. Moreover, even if they understand the goals, they can’t make sound decisions without requisite technical knowledge and skills. Handing over the keys to a submarine under these conditions is good way to end up at the bottom of the ocean.</p>
-        <p>Marquet contends that the degree of control given to the team should align with their level of competence and clarity. Teams lacking in these areas will naturally require more guidance and centralized decision-making. However, as team members develop their skills and understand the mission better, leaders can—and should—gradually shift the balance, allowing the team to take the helm.</p>
-        <blockquote>
-          <p>“Control without competence is chaos.”</p>
-        </blockquote>
-        <h2 id="practical-techniques-for-shifting-control">Practical Techniques for Shifting Control</h2>
-        <p>Transitioning to a leader-leader model requires more than just good intentions; it requires practical tools and techniques. Marquet suggests several methods to foster this cultural shift:</p>
-        <ol>
-          <li>
-            <p><strong>Intent-Based Statements</strong>: One of the book’s standout strategies is encouraging subordinates to use “I intend to…” statements. This shifts the focus from simply asking for permission to taking ownership and responsibility for decisions.</p>
-          </li>
-          <li>
-            <p><strong>Early and Frequent Conversations</strong>: Leaders should engage in short, frequent conversations to ensure that the team’s actions align with the organization’s goals and values. This helps correct errors, build competence, and increase clarity.</p>
-          </li>
-          <li>
-            <p><strong>Creating a Trusting Environment</strong>: For people to think out loud and take ownership of their decisions, they need to feel safe from humiliation and criticism. Building a culture of trust and respect is crucial.</p>
-          </li>
-          <li>
-            <p><strong>Certify Don’t Brief</strong>: Instead of relying on traditional (often passive) briefings, adopt certification processes. Certifications confirm that team members understand the information and can apply it effectively.</p>
-          </li>
-          <li>
-            <p><strong>Document Team Values and Reward Behavior</strong>: Clearly documenting team values and the behaviors that align with those values is crucial for maintaining clarity. Once these values are defined, recognizing and rewarding behaviors that embody them ensures that everyone is working towards the same goals.</p>
-          </li>
-          <li>
-            <p><strong>Process Changes</strong>: Marquet highlights the importance of ditching ineffective rituals and embracing processes that directly address observed problems.</p>
-          </li>
-        </ol>
-        <h2 id="conclusion">Conclusion</h2>
-        <p><em>Turn the Ship Around!</em> provides a compelling case for rethinking traditional leadership models. Marquet’s leader-leader approach is about more than just changing who makes decisions; it’s about creating a culture where every team member feels empowered, accountable, and motivated to contribute to the organization’s success. For leaders ready to transform their teams, Marquet’s insights offer a powerful blueprint for change.</p>
-        <div class="tags">
-          <a href="/tag/books" class="tag">
-            books
-          </a>
-          <a href="/tag/leadership" class="tag">
-            leadership
-          </a>
-          <a href="/tag/process" class="tag">
-            process
-          </a>
+              checkbox.addEventListener("change", function() {
+                const body = document.body
+                const reloadTheme = () => setTimeout(() => loadTheme(), 200);
+
+                if (this.checked) {
+                  localStorage.setItem(themeKey, dark)
+                  reloadTheme()
+                } else {
+                  localStorage.setItem(themeKey, light)
+                  reloadTheme()
+                }
+              })
+
+              document.addEventListener("DOMContentLoaded", () => {
+                loadTheme()
+              })
+            </script>
+          </nav>
         </div>
-      </article>
-    </main>
-    <footer class="primary-footer">
-      <section class="container">
-        <nav class="social-media">
-          <a href="https://www.linkedin.com/in/nickaroraesq" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-          </a>
-        </nav>
-        © 2024
-      </section>
-    </footer>
-  </body>
-</html>
+      </header>
+      <main class="primary-content">
+        <article class="post container flow">
+          <header>
+            <h1>Turn the Ship Around! by David Marquet</h1>
+            <div class="post-metadata">
+              <time datetime="2024-11-04 00:00:00 +0000">November 4, 2024</time>
+              <span>
+                4 min read
+              </span>
+            </div>
+          </header>
+          <p><img src="/assets/images/books/turn-the-ship-around.webp" alt="Some alt text" /></p>
+          <p>When you think of places ripe for leadership experiments, a nuclear submarine probably isn’t the first thing that springs to mind. Yet, this is exactly where David Marquet, a former U.S. Navy submarine captain, redefined leadership by challenging the traditional command-and-control model. His book, <em>Turn the Ship Around!</em>, recounts this transformation and offers a fresh perspective on how leaders can empower their teams for outstanding results.</p>
+          <h2 id="from-leader-follower-to-leader-leader">From Leader-Follower to Leader-Leader</h2>
+          <p>In most traditional organizations, the structure is simple: the leader gives orders and the followers execute. This is effective when the leader knows everything about every situation—but let’s face it, how often is that the case? Marquet experienced firsthand the limitations of this model when he took command of the <a href="https://en.wikipedia.org/wiki/USS_Santa_Fe_(SSN-763)">USS Santa Fe</a>, which was at the time the worst-performing submarine in the U.S. Navy. Faced with a crew that was unmotivated and disempowered, he realized that a different approach was necessary.</p>
+          <p>Instead of following the standard “leader-follower” model, Marquet pioneered a “leader-leader” model. In this approach, leadership isn’t about issuing orders from the top down but empowering every team member to think, decide, and take ownership of their work. The underlying idea is simple: when you push decision-making down to where the information lives, the team is happier and performs better.</p>
+          <blockquote>
+            <p>“The leader-leader structure is fundamentally different from the leader-follower structure. At its core is the belief that we can all be leaders and, in fact, it’s best when we all are leaders.”</p>
+          </blockquote>
+          <h2 id="competence-clarity-and-control">Competence, Clarity, and Control</h2>
+          <p>A key theme in Marquet’s approach is the balance of competence, clarity, and control. Marquet readily admits that decentralizing control carries risk. Team members can’t make sound decisions if they aren’t clear about the organization’s overarching goals. Moreover, even if they understand the goals, they can’t make sound decisions without requisite technical knowledge and skills. Handing over the keys to a submarine under these conditions is good way to end up at the bottom of the ocean.</p>
+          <p>Marquet contends that the degree of control given to the team should align with their level of competence and clarity. Teams lacking in these areas will naturally require more guidance and centralized decision-making. However, as team members develop their skills and understand the mission better, leaders can—and should—gradually shift the balance, allowing the team to take the helm.</p>
+          <blockquote>
+            <p>“Control without competence is chaos.”</p>
+          </blockquote>
+          <h2 id="practical-techniques-for-shifting-control">Practical Techniques for Shifting Control</h2>
+          <p>Transitioning to a leader-leader model requires more than just good intentions; it requires practical tools and techniques. Marquet suggests several methods to foster this cultural shift:</p>
+          <ol>
+            <li>
+              <p><strong>Intent-Based Statements</strong>: One of the book’s standout strategies is encouraging subordinates to use “I intend to…” statements. This shifts the focus from simply asking for permission to taking ownership and responsibility for decisions.</p>
+            </li>
+            <li>
+              <p><strong>Early and Frequent Conversations</strong>: Leaders should engage in short, frequent conversations to ensure that the team’s actions align with the organization’s goals and values. This helps correct errors, build competence, and increase clarity.</p>
+            </li>
+            <li>
+              <p><strong>Creating a Trusting Environment</strong>: For people to think out loud and take ownership of their decisions, they need to feel safe from humiliation and criticism. Building a culture of trust and respect is crucial.</p>
+            </li>
+            <li>
+              <p><strong>Certify Don’t Brief</strong>: Instead of relying on traditional (often passive) briefings, adopt certification processes. Certifications confirm that team members understand the information and can apply it effectively.</p>
+            </li>
+            <li>
+              <p><strong>Document Team Values and Reward Behavior</strong>: Clearly documenting team values and the behaviors that align with those values is crucial for maintaining clarity. Once these values are defined, recognizing and rewarding behaviors that embody them ensures that everyone is working towards the same goals.</p>
+            </li>
+            <li>
+              <p><strong>Process Changes</strong>: Marquet highlights the importance of ditching ineffective rituals and embracing processes that directly address observed problems.</p>
+            </li>
+          </ol>
+          <h2 id="conclusion">Conclusion</h2>
+          <p><em>Turn the Ship Around!</em> provides a compelling case for rethinking traditional leadership models. Marquet’s leader-leader approach is about more than just changing who makes decisions; it’s about creating a culture where every team member feels empowered, accountable, and motivated to contribute to the organization’s success. For leaders ready to transform their teams, Marquet’s insights offer a powerful blueprint for change.</p>
+          <div class="tags">
+            <a href="/tag/books" class="tag">
+              books
+            </a>
+            <a href="/tag/leadership" class="tag">
+              leadership
+            </a>
+            <a href="/tag/process" class="tag">
+              process
+            </a>
+          </div>
+        </article>
+      </main>
+      <footer class="primary-footer">
+        <section class="container">
+          <nav class="social-media">
+            <a href="https://www.linkedin.com/in/nickaroraesq" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+          </nav>
+          © 2024
+        </section>
+      </footer>
+    </body>
+  </html>
