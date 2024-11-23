@@ -1,7 +1,7 @@
 :root {
   /* palette */
-  --clr-background: light-dark(#eee9e2, #171e29);
-  --clr-foreground: light-dark(#1a1a1a, #eee9e2);
+  --clr-background: light-dark(#fff, #171e29);
+  --clr-foreground: light-dark(#1a1a1a, #fff);
   --clr-primary: light-dark(#e4d3b5, #39506f);
   --clr-secondary: light-dark(#f3f0eb, #212c3d);
   --clr-accent: light-dark(#daab5b, #eca52d);
@@ -11,9 +11,9 @@
   --clr-code-error: light-dark(#d72828, #e74343);
   --clr-code-background-error: light-dark(transparent,  transparent);
   --clr-code-comment: light-dark(#5479a2, #ffa8a8);
-  --clr-code-constant: light-dark(#1a1a1a, #eee9e2);
+  --clr-code-constant: light-dark(#1a1a1a, #fff);
   --clr-code-literal: light-dark(#bd882d, #e6db74);
-  --clr-code-name: light-dark(#1a1a1a, #eee9e2);
+  --clr-code-name: light-dark(#1a1a1a, #fff);
   --clr-code-operator: light-dark(#bd882d, #e6db74);
   --clr-code-date: light-dark(#bd882d, #e6db74);
   --clr-code-other: light-dark(#15844b, #3aeaac);

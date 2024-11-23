@@ -41,4 +41,6 @@ defaults:
 
 assets:
    sources:
-       -assets/fonts
+       -assets/styles
+       -assets/images
+       -assets/favicon

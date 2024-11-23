@@ -6,25 +6,28 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
+
+  color: var(--clr-foreground);
   background-color: var(--clr-background);
+
   text-rendering: optimizeSpeed;
   font-family: var(--ff-body);
   font-size: var(--fs-2);
+  font-weight: var(--fw-2);
   line-height: var(--lh-3);
   letter-spacing: -0.25px;
-  color: var(--clr-foreground);
-
-  & > * {
-    overflow: auto;
-  }
-
-  &.light {
-    font-weight: var(--fw-2);
-  }
 
   &.dark {
     font-weight: var(--fw-1);
   }
+
+  & > * {
+    overflow: auto;
+  }
+}
+
+strong {
+  font-weight: var(--fw-4);
 }
 
 h1, h2, h3 {
@@ -67,13 +70,6 @@ hr {
     letter-spacing: 0.75rem;
     color: var(--clr-foreground);
   }
-}
-
-.light strong {
-  font-weight: var(--fw-4);
-}
-.dark strong {
-  font-weight: var(--fw-3);
 }
 
 em {

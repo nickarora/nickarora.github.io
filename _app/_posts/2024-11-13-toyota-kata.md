@@ -7,72 +7,6 @@ tags:
 - leadership
 - process
 ---
-
-<style>
-.toyota-kata-perception-example {
-  display: inline-block;
-
-  .censored-text {
-    position: relative;
-    font-size: var(--fs-3);
-
-    p {
-      font-family: var(--ff-body);
-      letter-spacing: 2px;
-      white-space: nowrap;
-    }
-
-    .censor {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: calc(var(--fs-3) * 1.75 * 0.5);
-      backdrop-filter: blur(12px);
-
-      &.hide {
-        display: none;
-      }
-    }
-  }
-
-  .actions {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 0.25rem;
-    margin-top: 0.5rem;
-  }
-}
-
-@media (width < 600px) {
-  .toyota-kata-perception-example .censored-text {
-    font-size: var(--fs-2);
-
-    .censor {
-      height: calc(var(--fs-2) * 1.75 * 0.5);
-    }
-  }
-}
-</style>
-
-<script>
-  function toggleCensor() {
-    const button = document.querySelector(".actions button")
-
-    const censor = document.querySelector(".censor")
-    const hidden = censor.classList.contains("hide")
-
-    if (hidden) {
-      censor.classList.remove("hide")
-      button.textContent = "Reveal"
-    } else {
-      censor.classList.add("hide")
-      button.textContent = "Hide"
-    }
-  }
-</script>
-
 ![Some alt text](/assets/images/books/toyota-kata.webp)
 
 In the early 2000s, Toyota separated itself from all other carmakers in ways other manufacturers could not fathom. It was an era of astounding growth, where annual increases in Toyota's production sometimes outpaced the _total_ output of its competitors (somehow without compromising quality).
@@ -145,3 +79,73 @@ The goal is to help mentees develop the skills to solve problems independently. 
 ## Conclusion
 
 Toyota Kata offers more than just a window into Toyota’s success—it’s a toolkit for anyone aiming to tackle challenges, adapt to change, and achieve ambitious goals. By focusing on mindset over tools, Rother provides a fresh perspective on what it means to improve. The Improvement and Coaching Kata are practical, repeatable frameworks that can be applied not only in business but in life.
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+
+  .toyota-kata-perception-example {
+    display: inline-block;
+
+    .censored-text {
+      position: relative;
+      font-size: var(--fs-3);
+      font-weight: var(--fw-2);
+      line-height: var(--lh-3);
+
+      p {
+        font-family: 'Noto Serif', serif;
+        letter-spacing: 2px;
+        white-space: nowrap;
+      }
+
+      .censor {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: calc(var(--fs-3) * var(--lh-3) * 0.48);
+        backdrop-filter: blur(12px);
+
+        &.hide {
+          display: none;
+        }
+      }
+    }
+
+    .actions {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 0.25rem;
+      margin-top: 0.5rem;
+    }
+  }
+
+  @media (width < 600px) {
+    .toyota-kata-perception-example .censored-text {
+      font-size: var(--fs-2);
+      font-family: var(--ff-header);
+
+      .censor {
+        height: calc(var(--fs-2) * 1.75 * 0.5);
+      }
+    }
+  }
+</style>
+
+<script>
+  function toggleCensor() {
+    const button = document.querySelector(".actions button")
+
+    const censor = document.querySelector(".censor")
+    const hidden = censor.classList.contains("hide")
+
+    if (hidden) {
+      censor.classList.remove("hide")
+      button.textContent = "Reveal"
+    } else {
+      censor.classList.add("hide")
+      button.textContent = "Hide"
+    }
+  }
+</script>
