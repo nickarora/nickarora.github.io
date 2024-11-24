@@ -3,7 +3,7 @@
 # Initialize variables
 output_file=""
 quality=80  # Default quality for WEBP and AVIF
-max_height=400
+max_height=450 # Default maximum height of output images
 
 # Check if at least one argument is provided
 if [ $# -lt 1 ]; then
