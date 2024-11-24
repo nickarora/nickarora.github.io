@@ -8,7 +8,11 @@ tags:
 - process
 ---
 
-![Some alt text](/assets/images/books/turn-the-ship-around.webp)
+{%
+  include progressive-image.html
+  asset="books/turn-the-ship-around"
+  alt_text="Turn The Ship Around!"
+%}
 
 When you think of places ripe for leadership experiments, a nuclear submarine probably isn't the first thing that springs to mind. Yet, this is exactly where David Marquet, a former U.S. Navy submarine captain, redefined leadership by challenging the traditional command-and-control model. His book, _Turn the Ship Around!_, recounts this transformation and offers a fresh perspective on how leaders can empower their teams for outstanding results.
 

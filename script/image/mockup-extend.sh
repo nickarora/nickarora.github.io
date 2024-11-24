@@ -70,8 +70,7 @@ while [ "$#" -gt 0 ]; do
 done
 
 # Check if 'magick' command is available
-if ! command -v magick &> /dev/null
-then
+if ! command -v magick &> /dev/null; then
   echo "Error: ImageMagick 'magick' command not found. Please install ImageMagick."
   exit 1
 fi
@@ -89,11 +88,6 @@ echo "Aspect Ratio: $aspect_ratio"
 echo "Background Color: $background_color"
 echo "Binding Percentage: $binding_percentage%"
 
-# Get original image dimensions
-dimensions=$(magick identify -format "%w %h" "$image_file")
-orig_width=$(echo $dimensions | cut -d' ' -f1)
-orig_height=$(echo $dimensions | cut -d' ' -f2)
-
 # Parse aspect ratio
 aspect_w=$(echo "$aspect_ratio" | cut -dx -f1)
 aspect_h=$(echo "$aspect_ratio" | cut -dx -f2)
@@ -103,30 +97,39 @@ if [ -z "$aspect_w" ] || [ -z "$aspect_h" ]; then
   exit 1
 fi
 
-# Compute target aspect ratio R = aspect_w / aspect_h
-R=$(echo "scale=10; $aspect_w / $aspect_h" | bc -l)
+# Get original image dimensions
+dimensions=$(magick identify -format "%w %h" "$image_file")
+orig_width=$(echo "$dimensions" | cut -d' ' -f1)
+orig_height=$(echo "$dimensions" | cut -d' ' -f2)
 
-# Compute W_candidate and H_candidate
-W_candidate=$(echo "scale=10; $orig_height * $R" | bc -l)
-H_candidate=$(echo "scale=10; $orig_width / $R" | bc -l)
+# Compute aspect ratio factor
+aspect_ratio_factor=$(echo "scale=10; $aspect_w / $aspect_h" | bc -l)
 
-# Initialize W_new and H_new
+# Option 1: Keep original width
 W_new=$orig_width
-H_new=$orig_height
+H_new=$(echo "scale=0; $orig_width / $aspect_ratio_factor" | bc)
+scaling_factor_option1=$(echo "scale=10; $H_new / $orig_height" | bc -l)
 
-# Decide whether to adjust width or height
-if (( $(echo "$W_candidate >= $orig_width" | bc -l) )); then
-  W_new=$(printf "%.0f" "$W_candidate")
-elif (( $(echo "$H_candidate >= $orig_height" | bc -l) )); then
-  H_new=$(printf "%.0f" "$H_candidate")
+# Option 2: Keep original height
+H_new2=$orig_height
+W_new2=$(echo "scale=0; $orig_height * $aspect_ratio_factor" | bc)
+scaling_factor_option2=$(echo "scale=10; $W_new2 / $orig_width" | bc -l)
+
+# Decide which option to use based on minimal scaling
+if (( $(echo "$scaling_factor_option1 <= $scaling_factor_option2" | bc -l) )); then
+  W_new=$W_new
+  H_new=$H_new
+else
+  W_new=$W_new2
+  H_new=$H_new2
 fi
 
 # Ensure W_new and H_new are integers
 W_new=$(printf "%.0f" "$W_new")
 H_new=$(printf "%.0f" "$H_new")
 
-# Use 'magick' to resize and extend the image
-magick "$image_file" -resize "${W_new}x${H_new}\<" -background "$background_color" -gravity center -extent "${W_new}x${H_new}" "resized_image.png"
+# Resize the image to the new dimensions, stretching it if necessary
+magick "$image_file" -resize "${W_new}x${H_new}!" "resized_image.png"
 
 # Calculate the binding width in pixels
 binding_width=$(echo "($binding_percentage * $W_new) / 100" | bc)
@@ -135,7 +138,7 @@ if [ "$binding_width" -lt 1 ]; then
 fi
 
 # Create the binding column image
-magick -size ${binding_width}x${H_new} canvas:"$background_color" "binding_column.png"
+magick -size "${binding_width}x${H_new}" canvas:"$background_color" "binding_column.png"
 
 # Append the binding column to the left of the resized image
 magick "binding_column.png" "resized_image.png" +append "$output_file"

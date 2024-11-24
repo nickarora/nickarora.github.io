@@ -8,7 +8,11 @@ tags:
 - process
 ---
 
-{% include picture.html asset="books/toyota-kata" alt_text="Toyota Kata" %}
+{%
+  include progressive-image.html
+  asset="books/toyota-kata"
+  alt_text="Toyota Kata"
+%}
 
 In the early 2000s, Toyota separated itself from all other carmakers in ways other manufacturers could not fathom. It was an era of astounding growth, where annual increases in Toyota's production sometimes outpaced the _total_ output of its competitors (somehow without compromising quality).
 

@@ -3,10 +3,11 @@
 # Initialize variables
 output_file=""
 quality=80  # Default quality for WEBP and AVIF
+max_height=400
 
 # Check if at least one argument is provided
 if [ $# -lt 1 ]; then
-  echo "Usage: $0 input_image [-o output_base_name]"
+  echo "Usage: $0 input_image [-o output_base_name] [-mh max_height]"
   exit 1
 fi
 
@@ -29,6 +30,15 @@ while [ "$#" -gt 0 ]; do
         shift 2
       else
         echo "Error: -o requires an output base name."
+        exit 1
+      fi
+      ;;
+    -mh)
+      if [ -n "$2" ]; then
+        max_height="$2"
+        shift 2
+      else
+        echo "Error: -h requires a pixel value."
         exit 1
       fi
       ;;
@@ -68,7 +78,7 @@ temp_image="temp_resized.png"
 magick "$input_image" \
   -resize 900x \
   -gravity center \
-  -crop 900x400+0+0 +repage \
+  -crop 900x$max_height+0+0 +repage \
   -sharpen 0x1 \
   "$temp_image"
 
