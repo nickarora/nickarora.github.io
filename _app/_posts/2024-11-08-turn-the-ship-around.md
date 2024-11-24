@@ -10,7 +10,8 @@ tags:
 
 {%
   include progressive-image.html
-  asset="books/turn-the-ship-around"
+  asset="turn-the-ship-around"
+  path="books"
   alt_text="Turn The Ship Around!"
 %}
 

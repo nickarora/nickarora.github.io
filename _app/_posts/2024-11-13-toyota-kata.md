@@ -10,7 +10,8 @@ tags:
 
 {%
   include progressive-image.html
-  asset="books/toyota-kata"
+  asset="toyota-kata"
+  path="books"
   alt_text="Toyota Kata"
 %}
 
