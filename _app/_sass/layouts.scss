@@ -9,7 +9,7 @@
 }
 
 .primary-header {
-  padding: 0.5rem 0;
+  padding: 1rem 0 0.5rem 0;
   margin-bottom: 1rem;
 
   & > section {
@@ -18,12 +18,15 @@
     justify-content: space-between;
   }
 
-  a {
-    text-decoration-line: none;
+  a.site-id {
+    font-family: var(--ff-header);
+    font-weight: var(--fw-2);
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    position: relative;
 
-    &:hover {
-      text-decoration-line: underline;
-    }
+    color: var(--clr-foreground);
+    text-decoration-line: none;
   }
 
   nav {
