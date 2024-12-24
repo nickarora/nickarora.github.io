@@ -94,7 +94,7 @@ Toyota Kata offers more than just a window into Toyota’s success—it’s a to
 
     .censored-text {
       position: relative;
-      font-size: var(--fs-3);
+      font-size: var(--fs-4);
       font-weight: var(--fw-2);
       line-height: var(--lh-3);
 
@@ -109,7 +109,7 @@ Toyota Kata offers more than just a window into Toyota’s success—it’s a to
         bottom: 0;
         left: 0;
         right: 0;
-        height: calc(var(--fs-3) * var(--lh-3) * 0.48);
+        height: calc(var(--fs-4) * var(--lh-3) * 0.48);
         backdrop-filter: blur(12px);
 
         &.hide {
