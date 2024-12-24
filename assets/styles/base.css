@@ -324,6 +324,7 @@ max-width: 100%;
   font-weight: var(--fw-3);
   font-size: var(--fs-3);
   letter-spacing: -0.75px;
+  line-height: var(--lh-1);
   }
   ul, ol {
   padding-left: 1rem;
