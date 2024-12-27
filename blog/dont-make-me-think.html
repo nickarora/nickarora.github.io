@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Software engineer specializing in full stack web application" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <title>Don’t Make Me Think by Steve Krug | Nick Arora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&&family=JetBrains+Mono:wght@200;300&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap">
+      <link rel="stylesheet" href="/assets/styles/base.css">
+    </head>
+    <body>
+      <header class="primary-header">
+        <section class="container">
+          <a class="site-id" href="/">Nick Arora</a>
+          <nav>
+            <label id="theme-toggle">
+              <input type="checkbox" />
+              <div class="icons">
+                <svg class="sun" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
+                <svg class="moon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+              </div>
+            </label>
+            <script>
+              const dark = "dark"
+              const light = "light"
+              const themeKey = "theme"
+
+              const toggle = document.getElementById("theme-toggle")
+              const checkbox = toggle.querySelector("input")
+
+              function loadTheme() {
+                let theme = localStorage.getItem(themeKey) ?? 'light'
+
+                checkbox.checked = theme === dark
+
+                const body = document.body
+                body.setAttribute("class", theme)
+              }
+
+              checkbox.addEventListener("change", function() {
+                const body = document.body
+                const reloadTheme = () => setTimeout(() => loadTheme(), 200);
+
+                if (this.checked) {
+                  localStorage.setItem(themeKey, dark)
+                  reloadTheme()
+                } else {
+                  localStorage.setItem(themeKey, light)
+                  reloadTheme()
+                }
+              })
+
+              document.addEventListener("DOMContentLoaded", () => {
+                loadTheme()
+              })
+            </script>
+          </nav>
+        </div>
+      </header>
+      <main class="primary-content">
+        <article class="post container flow">
+          <header>
+            <h1>Don’t Make Me Think by Steve Krug</h1>
+            <div class="post-metadata">
+              <time datetime="2024-12-27 00:00:00 +0000">December 27, 2024</time>
+              <span>
+                7 min read
+              </span>
+            </div>
+          </header>
+          <picture>
+            <source srcset="/assets/images/books/dont-make-me-think/dont-make-me-think.avif" type="image/avif" />
+            <source srcset="/assets/images/books/dont-make-me-think/dont-make-me-think.webp" type="image/webp" />
+            <img src="/assets/images/books/dont-make-me-think/dont-make-me-think.png" alt="Don't Make Me Think" />
+          </picture>
+          <p>Steve Krug’s <em>Don’t Make Me Think</em> has become a touchstone for anyone who cares about making websites or applications easy to use. The title alone sums up its guiding principle: users should never have to pause and wonder what to do next. If you’ve ever been lost on a website, uncertain where to click, or frustrated by cluttered navigation, Krug’s wisdom will resonate.</p>
+          <h2 id="users-dont-behave-the-way-we-expect">Users Don’t Behave The Way We Expect</h2>
+          <blockquote>
+            <p>“In reality, though, most of the time we don’t choose the best option—we choose the first reasonable option, a strategy known as satisficing.”</p>
+          </blockquote>
+          <p>A pivotal argument in <em>Don’t Make Me Think</em> is that users don’t behave in a rational, methodical way. Instead of patiently studying each page, evaluating all options, and making informed decisions, people mostly…scan and muddle through. They’re on a mission, either to purchase a product, find some specific piece of information, or complete a task, and they want to do it in the least amount of time possible. Anything that doesn’t serve that mission is, at best, noise and, at worst, an annoyance.</p>
+          <p>Due to this approach, users can’t be relied on to make an “optimal” choice. If they discover an option that seems loosely related to their goal (a.k.a. “good enough”), they’ll go with it, even if there is a better choice further down the page.</p>
+          <p>This may seem disheartening. Why invest time and resources crafting a user interface that no one will even read? But this is the wrong lens. Thoughtful design is <em>even more important</em> because of users’ tendency to use applications without really “getting it.”</p>
+          <h2 id="the-essence-of-good-usability">The Essence of Good Usability</h2>
+          <p>Krug proposes a very simple definition of usability: a product is usable if a person of average (or below average) ability and experience can figure out how to use it quickly, without it feeling like too much trouble.</p>
+          <p>He argues that If we can anticipate and accommodate the types of half-informed, rapid-fire decisions users tend to make, we have a shot at making our applications actually useful. We may even prevent users from leaving in frustration when they make the wrong choice or can’t find what they need. But how do you pull this off?</p>
+          <p>Krug focuses on two key ideas: make your interface <strong>clear</strong> and protect the user’s <strong>good will</strong>.</p>
+          <h2 id="designing-to-maximize-clarity">Designing to Maximize Clarity</h2>
+          <p>When an app or website is clear, people don’t have to scratch their heads to figure out where to click or what to read. To design for clarity, Krug makes several practical recommendations:</p>
+          <ul>
+            <li><strong>Prioritize Scanning</strong>: Because users are primarily scanning, focus on making the process as frictionless as possible. One way is to use a strong visual hierarchy, splitting text into headings, subheadings, and clear groupings. Keep paragraphs short, include bulleted lists, and highlight keywords. Make sure buttons or links look clickable at a glance.</li>
+          </ul>
+          <blockquote>
+            <p>“Designers love subtle cues, because subtlety is one of the traits of sophisticated design. But Web users are generally in such a hurry that they routinely miss subtle cues.”</p>
+          </blockquote>
+          <ul>
+            <li><strong>Make Decisions Easy</strong>: At every level of the application, the aim should be to limit cognitive load and present clear choices. Don’t obsess over having the fewest possible clicks; three easy clicks often beats one confusing click.</li>
+          </ul>
+          <blockquote>
+            <p>“It doesn’t matter how many times I have to click, as long as each click is a mindless, unambiguous choice.”</p>
+          </blockquote>
+          <ul>
+            <li><strong>Choose Words Carefully</strong>: Krug advocates omitting needless words. Extra text only clutters the page and distracts from a user’s goal. He warns against “happy talk”— self-congratulatory promotional text that doesn’t help the user. Even instructional text should be viewed with skepticism. Ideally, any required actions will ideally be self-explanatory.</li>
+          </ul>
+          <blockquote>
+            <p>“Get rid of half the words on each page, then get rid of half of what’s left.”</p>
+          </blockquote>
+          <ul>
+            <li><strong>Provide Situational Awareness</strong>: In a physical store, you can see where you are by reading the signs above the aisles. Online experiences can be far more disorienting. It’s difficult to tell how big the application is or where you are within it. That’s why Krug recommends persistent navigation, a clear link to go home, page names that stand out, breadcrumbs, and labeled tabs. This way, people always know where they are and how to get around.</li>
+          </ul>
+          <h2 id="designing-to-preserve-good-will">Designing to Preserve Good Will</h2>
+          <p>Krug uses the idea of a “reservoir of good will” to explain how every user arrives at your site with some level of trust and patience. Negative experiences drain this reservoir. Positive ones fill it back up.</p>
+          <p>Maintaining good will is important because it is the main reason users choose to continue using your application. After a certain threshold of frustration, a user is likely to abandon the site entirely.</p>
+          <h3 id="interactions-that-build-good-will">Interactions That Build Good Will</h3>
+          <ul>
+            <li>Predict the actions your user wants to take, and make those actions obvious</li>
+            <li>Tell users what they want to know right away (e.g., how much your product costs or when something will ship)</li>
+            <li>Save users steps if you can (e.g., auto-filling form fields)</li>
+            <li>Providing robust help resources (e.g., FAQs and clear support pages)</li>
+            <li>Make sure users can recover from errors quickly</li>
+            <li>Apologize when technical limitations “force your hand” into a suboptimal user experience</li>
+          </ul>
+          <h3 id="interactions-that-drain-good-will">Interactions That Drain Good Will</h3>
+          <ul>
+            <li>Hiding important information</li>
+            <li>Punishing users for not doing things “your” way</li>
+            <li>Forcing people to give submit unnecessary, personal details</li>
+            <li>Making users wade through promotional clutter</li>
+            <li>An amateur, sloppy appearance</li>
+          </ul>
+          <h2 id="the-vital-role-of-user-testing">The Vital Role of User Testing</h2>
+          <p>Even with careful planning, designing for usability is hard. Design decisions made with good intentions may inadvertently cause frustration for users. That’s where testing comes in. Regular user testing helps product teams identify, prioritize, and correct the most serious usability problems.</p>
+          <p>Often companies are reluctant to user test because they do not have the right equipment or access to their target users. Krug argues that we overemphasize the importance of only testing “target users.” He notes that almost anyone can highlight confusing aspects of a design because the confusion is often universal. Moreover, inexpensive screen share software is often the only real tooling you need to begin regular user testing sessions. The barrier to user testing may be lower than you think.</p>
+          <blockquote>
+            <p>“If you want a great site, you’ve got to test. After you’ve worked on a site for even a few weeks, you can’t see it freshly anymore. You know too much. The only way to find out if it really works is to test it.”</p>
+          </blockquote>
+          <h2 id="conclusion">Conclusion</h2>
+          <p><em>Don’t Make Me Think</em> champions a straightforward, empathetic approach to design. It is an excellent introduction to the principles of intuitive navigation and information architecture. The common sense and practical advice it offers makes it essential reading for anyone interested in improving the usability of their site of application.</p>
+          <div class="tags">
+            <a href="/tag/books" class="tag">
+              books
+            </a>
+            <a href="/tag/design" class="tag">
+              design
+            </a>
+          </div>
+        </article>
+      </main>
+      <footer class="primary-footer">
+        <section class="container">
+          © 2024 Nick Arora
+        </section>
+      </footer>
+    </body>
+  </html>
