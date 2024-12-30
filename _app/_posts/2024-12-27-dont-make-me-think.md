@@ -46,7 +46,7 @@ When an app or website is clear, people don’t have to scratch their heads to f
 
 > “It doesn’t matter how many times I have to click, as long as each click is a mindless, unambiguous choice.”
 
-- **Choose Words Carefully**: Krug advocates omitting needless words. Extra text only clutters the page and distracts from a user’s goal. He warns against “happy talk”— self-congratulatory promotional text that doesn’t help the user. Even instructional text should be viewed with skepticism. Ideally, any required actions will ideally be self-explanatory.
+- **Choose Words Carefully**: Krug advocates omitting needless words. Extra text only clutters the page and distracts from a user’s goal. He warns against “happy talk”— self-congratulatory promotional text that doesn’t help the user. Even instructional text should be viewed with skepticism. Ideally, any required actions will be self-explanatory.
 
 > “Get rid of half the words on each page, then get rid of half of what’s left.”
 
@@ -56,13 +56,13 @@ When an app or website is clear, people don’t have to scratch their heads to f
 
 Krug uses the idea of a “reservoir of good will” to explain how every user arrives at your site with some level of trust and patience. Negative experiences drain this reservoir. Positive ones fill it back up.
 
-Maintaining good will is important because it is the main reason users choose to continue using your application. After a certain threshold of frustration, a user is likely to abandon the site entirely.
+Maintaining good will is important because it is the reason users continue using your application. After a certain threshold of frustration, a user is likely to abandon the site entirely.
 
 ### Interactions That Build Good Will
 - Predict the actions your user wants to take, and make those actions obvious
 - Tell users what they want to know right away (e.g., how much your product costs or when something will ship)
 - Save users steps if you can (e.g., auto-filling form fields)
-- Providing robust help resources (e.g., FAQs and clear support pages)
+- Provide robust help resources (e.g., FAQs and clear support pages)
 - Make sure users can recover from errors quickly
 - Apologize when technical limitations “force your hand” into a suboptimal user experience
 
