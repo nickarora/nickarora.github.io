@@ -89,7 +89,7 @@
           </blockquote>
           <h2 id="the-problem">The Problem</h2>
           <p>Developers absolutely hate working on applications like this. But their distaste is not the real problem. The <em>real</em> problem is that the time and cost necessary to change the application have considerably increased. When a business has a hard time responding to changing market conditions, it can fail outright.</p>
-          <p>This paints a dire picture. Thankfully, Sandi Metz’s book, Practical Object Oriented Design, demonstrates how this bleak future can be avoided. The trick is learning to <em>design</em> code so it remains <em>easy to change</em>.</p>
+          <p>This paints a dire picture. Thankfully, Sandi Metz’s book, <em>Practical Object Oriented Design</em>, demonstrates how this bleak future can be avoided. The trick is learning to <em>design</em> code so it remains <em>easy to change</em>.</p>
           <blockquote>
             <p>The purpose of design is to allow you to do design later, and it’s primary goal is to reduce the cost of change.</p>
           </blockquote>
@@ -132,7 +132,7 @@
             <p>The choices you make about the direction of dependencies have far reaching consequences that manifest themselves for the life of your application. …if you get it wrong then the dependencies will gradually take over and the application will become harder and harder to change</p>
           </blockquote>
           <ul>
-            <li><strong>Change behavior by leveraging dependency injection.</strong> Despite the lofty name, dependency injection is a relatively simple concept. Instead of creating dependencies within an object, push them in from the outside. As a result, the object now relies on the dependency’s <em>interface</em> (rather than any <em>specific</em> class or implementation). This makes it straightforward to substitute an alternative implementation.</li>
+            <li><strong>Change behavior by leveraging dependency injection.</strong> Despite the lofty name, dependency injection is a relatively simple concept. Instead of creating dependencies within your object, push them in from the outside. This means your object no longer depends on some <em>specific</em> class or implementation. Any object that implements the required interface can be pushed in. This makes it straightforward to substitute alternative implementations.</li>
           </ul>
           <blockquote>
             <p>You don’t send messages because you have objects, you have objects because you send messages.</p>
@@ -141,7 +141,7 @@
             <li><strong>Prefer composition over inheritance.</strong> With inheritance, code is shared through method delegation to a parent class (or mix-in). Though it can sometimes be useful, it comes with significant risk. Inheritance structures are inherently inflexible. As soon as one of the “children” deviates from the others, the entire implementation must be reevaluated. The safer approach is to share code through composition.</li>
           </ul>
           <blockquote>
-            <p>Composition contains far few built-in dependencies than inheritance; it is very often the best choice.</p>
+            <p>Composition contains far fewer built-in dependencies than inheritance; it is very often the best choice.</p>
           </blockquote>
           <ul>
             <li><strong>Write high value tests.</strong> The most common reasons used to justify writing tests are that they reduce bugs and provide documentation. These reasons, while valid, belie a more critical goal. Well written tests reduce the cost of change. They provide an environment where an object’s design can be evaluated and they enable developers to safely modify an implementation.</li>
