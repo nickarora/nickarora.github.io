@@ -24,7 +24,7 @@ However, as time ticks on, that software endures a constant barrage of new requi
 
 Developers absolutely hate working on applications like this. But their distaste is not the real problem. The _real_ problem is that the time and cost necessary to change the application have considerably increased. When a business has a hard time responding to changing market conditions, it can fail outright.
 
-This paints a dire picture. Thankfully, Sandi Metz’s book, Practical Object Oriented Design, demonstrates how this bleak future can be avoided. The trick is learning to _design_ code so it remains _easy to change_.
+This paints a dire picture. Thankfully, Sandi Metz’s book, _Practical Object Oriented Design_, demonstrates how this bleak future can be avoided. The trick is learning to _design_ code so it remains _easy to change_.
 
 > The purpose of design is to allow you to do design later, and it's primary goal is to reduce the cost of change.
 
@@ -64,13 +64,13 @@ To tackle this, Sandi Metz prescribes several battle-tested strategies:
 
 > The choices you make about the direction of dependencies have far reaching consequences that manifest themselves for the life of your application. ...if you get it wrong then the dependencies will gradually take over and the application will become harder and harder to change
 
-- **Change behavior by leveraging dependency injection.** Despite the lofty name, dependency injection is a relatively simple concept. Instead of creating dependencies within an object, push them in from the outside. As a result, the object now relies on the dependency's _interface_ (rather than any _specific_ class or implementation). This makes it straightforward to substitute an alternative implementation.
+- **Change behavior by leveraging dependency injection.** Despite the lofty name, dependency injection is a relatively simple concept. Instead of creating dependencies within your object, push them in from the outside. This means your object no longer depends on some _specific_ class or implementation. Any object that implements the required interface can be pushed in. This makes it straightforward to substitute alternative implementations.
 
 > You don't send messages because you have objects, you have objects because you send messages.
 
 - **Prefer composition over inheritance.** With inheritance, code is shared through method delegation to a parent class (or mix-in). Though it can sometimes be useful, it comes with significant risk. Inheritance structures are inherently inflexible. As soon as one of the “children” deviates from the others, the entire implementation must be reevaluated. The safer approach is to share code through composition.
 
-> Composition contains far few built-in dependencies than inheritance; it is very often the best choice.
+> Composition contains far fewer built-in dependencies than inheritance; it is very often the best choice.
 
 - **Write high value tests.** The most common reasons used to justify writing tests are that they reduce bugs and provide documentation. These reasons, while valid, belie a more critical goal. Well written tests reduce the cost of change. They provide an environment where an object's design can be evaluated and they enable developers to safely modify an implementation.
 
