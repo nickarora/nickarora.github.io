@@ -64,6 +64,9 @@ max-width: 100%;
   --clr-foreground: light-dark(#1a1a1a, #fff);
   --clr-primary: light-dark(#e4d3b5, #39506f);
   --clr-secondary: light-dark(#f3f0eb, #212c3d);
+  --clr-tertiary: light-dark(
+  color-mix(in lab, var(--clr-background) 90%, var(--clr-foreground)),
+  color-mix(in lab, var(--clr-background) 80%, var(--clr-foreground)));
   --clr-accent: light-dark(#daab5b, #eca52d);
   /* code highlighting */
   --clr-code-background: light-dark(#f3f0eb, #212c3d);
@@ -417,7 +420,7 @@ max-width: 100%;
   padding: 1rem 0 0.75rem 0;
   margin-bottom: 2rem;
   background-color: var(--clr-background);
-  border-bottom: 1px solid color-mix(in lab, var(--clr-background) 90%, var(--clr-foreground));
+  border-bottom: 1px solid var(--clr-tertiary);
   }
   .primary-header > section {
   display: flex;
@@ -466,7 +469,7 @@ max-width: 100%;
   .post-previews li.post-preview {
   list-style: none;
   padding: 2rem 0 2rem 0;
-  border-top: 1px solid var(--clr-primary);
+  border-top: 1px solid var(--clr-tertiary);
   }
   .post-previews li.post-preview:first-child {
   border-top: none;
