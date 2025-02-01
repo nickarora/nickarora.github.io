@@ -4,6 +4,9 @@
   --clr-foreground: light-dark(#1a1a1a, #fff);
   --clr-primary: light-dark(#e4d3b5, #39506f);
   --clr-secondary: light-dark(#f3f0eb, #212c3d);
+  --clr-tertiary: light-dark(
+    color-mix(in lab, var(--clr-background) 90%, var(--clr-foreground)),
+    color-mix(in lab, var(--clr-background) 80%, var(--clr-foreground)));
   --clr-accent: light-dark(#daab5b, #eca52d);
 
   /* code highlighting */
