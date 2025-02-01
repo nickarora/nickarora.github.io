@@ -9,8 +9,15 @@
 }
 
 .primary-header {
-  padding: 1rem 0 0.5rem 0;
-  margin-bottom: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  padding: 1rem 0 0.75rem 0;
+  margin-bottom: 2rem;
+
+  background-color: var(--clr-background);
+  border-bottom: 1px solid color-mix(in lab, var(--clr-background) 90%, var(--clr-foreground));
 
   & > section {
     display: flex;
