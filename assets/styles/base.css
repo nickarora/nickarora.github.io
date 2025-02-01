@@ -277,7 +277,7 @@ max-width: 100%;
   /* Generic Heading & Diff Header */
   :root {
   --flow-spacer: 1.5em;
-  --container-max-width: 960px;
+  --container-max-width: 840px;
   }
   html {
   scroll-behavior: smooth;
@@ -411,8 +411,13 @@ max-width: 100%;
   margin: 0 auto;
   }
   .primary-header {
-  padding: 1rem 0 0.5rem 0;
-  margin-bottom: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 1rem 0 0.75rem 0;
+  margin-bottom: 2rem;
+  background-color: var(--clr-background);
+  border-bottom: 1px solid color-mix(in lab, var(--clr-background) 90%, var(--clr-foreground));
   }
   .primary-header > section {
   display: flex;
@@ -462,6 +467,10 @@ max-width: 100%;
   list-style: none;
   padding: 2rem 0 2rem 0;
   border-top: 1px solid var(--clr-primary);
+  }
+  .post-previews li.post-preview:first-child {
+  border-top: none;
+  padding: 0 0 2rem 0;
   }
   .post-previews li.post-preview > * {
   display: flex;
