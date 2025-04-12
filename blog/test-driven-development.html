@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Software engineer specializing in full stack web application" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <title>Test Driven Development By Example by Kent Beck | Nick Arora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&&family=JetBrains+Mono:wght@200;300&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap">
+      <link rel="stylesheet" href="/assets/styles/base.css">
+    </head>
+    <body>
+      <header class="primary-header">
+        <section class="container">
+          <a class="site-id" href="/">Nick Arora</a>
+          <nav>
+            <label id="theme-toggle">
+              <input type="checkbox" />
+              <div class="icons">
+                <svg class="sun" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
+                <svg class="moon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+              </div>
+            </label>
+            <script>
+              const dark = "dark"
+              const light = "light"
+              const themeKey = "theme"
+
+              const toggle = document.getElementById("theme-toggle")
+              const checkbox = toggle.querySelector("input")
+
+              function loadTheme() {
+                let theme = localStorage.getItem(themeKey) ?? 'light'
+
+                checkbox.checked = theme === dark
+
+                const body = document.body
+                body.setAttribute("class", theme)
+              }
+
+              checkbox.addEventListener("change", function() {
+                const body = document.body
+                const reloadTheme = () => setTimeout(() => loadTheme(), 200);
+
+                if (this.checked) {
+                  localStorage.setItem(themeKey, dark)
+                  reloadTheme()
+                } else {
+                  localStorage.setItem(themeKey, light)
+                  reloadTheme()
+                }
+              })
+
+              document.addEventListener("DOMContentLoaded", () => {
+                loadTheme()
+              })
+            </script>
+          </nav>
+        </div>
+      </header>
+      <main class="primary-content">
+        <article class="post container flow">
+          <header>
+            <h1>Test Driven Development By Example by Kent Beck</h1>
+            <div class="post-metadata">
+              <time datetime="2025-04-11 00:00:00 +0000">April 11, 2025</time>
+              <span>
+                9 min read
+              </span>
+            </div>
+          </header>
+          <picture>
+            <source srcset="/assets/images/books/tdd/tdd.avif" type="image/avif" />
+            <source srcset="/assets/images/books/tdd/tdd.webp" type="image/webp" />
+            <img src="/assets/images/books/tdd/tdd.png" alt="Test Driven Development By Example" />
+          </picture>
+          <p>Few books have shaped modern software development as profoundly as Kent Beck’s <em>Test-Driven Development By Example</em>. Published in 2002, it introduced the simple yet disruptive idea of writing tests before writing code, a practice that has influenced how developers think about design, feedback, and programming discipline.</p>
+          <blockquote>
+            <p> “TDD is an awareness of the gap between <em>decision</em> and <em>feedback</em> during programming, and techniques to control that gap.”</p>
+          </blockquote>
+          <h2 id="the-procedure-defined">The Procedure Defined</h2>
+          <p>Beck defines the “canonical” TDD process as follows:</p>
+          <ol>
+            <li>
+              <p><strong>List the test scenarios</strong>: Enumerate known behaviors or requirements the code must handle</p>
+            </li>
+            <li>
+              <p><strong>Write one test</strong>: Start small by writing a test for a single scenario</p>
+            </li>
+            <li>
+              <p><strong>Make it (and all previous tests) pass</strong>: Implement the minimal code necessary to satisfy the test</p>
+            </li>
+            <li>
+              <p><strong>Refactor if desired</strong>: Once the test passes, refine the code’s design and structure without altering its behavior</p>
+            </li>
+            <li>
+              <p><strong>Repeat until there are no further tests to write</strong>: Continue this cycle until all aspects of the desired functionality have been implemented</p>
+            </li>
+          </ol>
+          <p>This iterative process fosters continuous feedback, encourages working in manageable increments, and ensures that each small change is reliable.</p>
+          <blockquote>
+            <p>“Testing is a process of learning, learning about the behavior of the system, learning about its weaknesses.”</p>
+          </blockquote>
+          <h2 id="why-its-worth-doing">Why It’s Worth Doing</h2>
+          <h3 id="prevent-defects-early">Prevent Defects Early</h3>
+          <p>By writing tests before code, TDD dramatically shortens the time between the introduction of a defect and its detection. The cycle shortens from days or weeks to mere seconds. This rapid feedback loop allows developers to catch and address issues immediately, ensuring that their changes are reliable.</p>
+          <blockquote>
+            <p>“Rather than apply minutes of suspect reasoning, we can just ask the computer by making the change and running the tests.”</p>
+          </blockquote>
+          <h3 id="improve-your-design">Improve Your Design</h3>
+          <p>While TDD is not a replacement for making design decisions, it gives you immediate feedback about what is likely to be a <em>bad</em> design. When tests are hard to write, slow to run, or non-deterministic, they serve as a warning sign that the underlying design may need rethinking. By paying attention to these signals, developers gain a valuable tool for making more thoughtful design choices.</p>
+          <blockquote>
+            <p>“Our guesses about the right interface are no more likely to be perfect than our guesses about the right implementation.”</p>
+          </blockquote>
+          <h3 id="reduce-regressions-and-improve-collaboration">Reduce Regressions and Improve Collaboration</h3>
+          <p>A robust test suite does more than verify current functionality – it acts as a living document that captures the design rationale and assumptions behind the code. This documentation becomes invaluable for future programmers, reducing the risk of unintended regressions as the codebase evolves.</p>
+          <blockquote>
+            <p>“TDD allows developers to have courage; courage to modify, to delete, and to add.”</p>
+          </blockquote>
+          <h3 id="develop-faster">Develop Faster</h3>
+          <p>While writing tests may initially seem to slow down development, the long-term efficiency gains are significant. Developers waste less time debugging defects, chasing down regressions, wrestling with over-engineered solutions, or reworking poor designs.</p>
+          <h3 id="reduce-anxiety-and-increase-confidence">Reduce Anxiety and Increase Confidence</h3>
+          <p>TDD has the ability to transform uncertainty into confidence. When faced with a challenging or ambiguous requirement, writing a test forces clarity. It turns vague concerns into concrete, manageable tasks. As each test passes, it reinforces trust in the codebase and builds momentum.</p>
+          <blockquote>
+            <p>“Write tests until fear is transformed into boredom.”</p>
+          </blockquote>
+          <h2 id="qualities-of-a-good-test">Qualities of a Good Test</h2>
+          <h3 id="readable">Readable</h3>
+          <p>A test should clearly express its intent, serving not only as a verification tool but also as a form of documentation. When a test is understandable at a glance, it communicates the original design rationale and guides future modifications.</p>
+          <h3 id="fast-and-automated">Fast and Automated</h3>
+          <p>Tests must execute quickly and without human intervention. Fast tests encourage developers to run the entire suite frequently; Slow tests disincentivize the developer from integrating testing deeply into the development process.</p>
+          <h3 id="isolated-and-deterministic">Isolated and Deterministic</h3>
+          <p>Good tests are <em>isolated</em>, meaning they yield the same results regardless of the order in which they run. This ensures that each test is proving a specific piece of functionality without interference from others. Additionally, tests must be <em>deterministic</em>. If nothing changes in the code, the test result must remain consistent. Predictability is key to identifying genuine issues.</p>
+          <h3 id="structure-insensitive">Structure Insensitive</h3>
+          <p>Tests should be sensitive to changes to <em>what the code does</em> rather than <em>how it does it</em>. By disregarding implementation details, the internal structure is allowed to evolve.</p>
+          <h3 id="confidence-inspiring">Confidence Inspiring</h3>
+          <p>Each passing test should build confidence in the reliabiltiy of the software and the overall design. Each failing test should be specific enough to enable a deveoper to pinpoint the exact nature and location of the problem.</p>
+          <blockquote>
+            <p>“Each test should make a unique contribution, otherwise, it’s just wasted, confusing execution time.”</p>
+          </blockquote>
+          <h3 id="understood-holistically">Understood Holistically</h3>
+          <p>When new developers begin writing tests, a common mistake is to test <em>too much</em>. Consider a developer attempting to prove that a method truncates an input string to three characters. It would be impossible to test every possible combination of characters as inputs.</p>
+          <p>Instead, a better approach would be to test a few representative inputs:</p>
+          <ul>
+            <li>A string with fewer than three characters</li>
+            <li>A string with exactly three characters</li>
+            <li>A string with more than three characters</li>
+          </ul>
+          <p>By considering the tests together, we can <em>infer</em> that the software actually works. This is a concept that Beck refers to as <em>composability</em>.</p>
+          <blockquote>
+            <p>“The confidence provided by one test should combine with the confidence provided by other tests.”</p>
+          </blockquote>
+          <h2 id="qualities-of-a-good-test-writer">Qualities of a Good Test Writer</h2>
+          <p>While its easy to begin writing tests, it can take a life time to truly master the skill.  Beck offers some insight into the qualities that embody a proficient test writer:</p>
+          <h3 id="mastery-of-small-steps">Mastery of Small Steps</h3>
+          <p>Good test writers know how to break complex problems into small, deliberate steps. It requires great skill to identify the smallest unit of behavior that can be implemented and verified independently. This practice, known as <a href="https://tidyfirst.substack.com/p/tdds-missing-skill-behavioral-composition">behavioral composition</a>, enables developers to incrementally build a system while ensuring each change is safe and well-understood.</p>
+          <blockquote>
+            <p>“The difference between a journeyman programmer and a master, from my perspective, is that the master never tries to eat the whole salami at once.”</p>
+          </blockquote>
+          <h3 id="flexibility-in-approach">Flexibility in Approach</h3>
+          <p>Experienced understand that the order of implementation can vary based on the problem at hand. Sometimes you implement the output code first. Other times you implement the input code first. Creative sequencing allows test writers to navigate complex problems more effectively.</p>
+          <blockquote>
+            <p>“Are the teeny-tiny steps feeling restrictive? Take bigger steps. Are you feeling a little unsure? Take smaller steps. TDD is a steering process – a little this way, a little that way.”</p>
+          </blockquote>
+          <h2 id="objections-to-adoption">Objections to Adoption</h2>
+          <p>Despite its many advantages, TDD has faced its share of resistance within the developer community. Beck himself acknowledges that TDD isn’t the right tool for every situation, but it’s worth asking whether every type of resistance is justified.</p>
+          <p>If you’re uncertain about adopting TDD, consider whether any of the following might be influencing your hesitation:</p>
+          <h3 id="fear-of-responsibility">Fear of Responsibility</h3>
+          <p>TDD requires developers to take full ownership of the code they produce. For some, this responsibility can feel daunting; every failing test is a stark reminder of the imperfections in one’s code. The idea of being accountable for every line of code, with immediate evidence of any mistake, can be intimidating.</p>
+          <blockquote>
+            <p>“If you’re happy slamming some code together that more or less works and you’re happy never looking at the result again, TDD is not for you.”</p>
+          </blockquote>
+          <h3 id="skill-issues">Skill Issues</h3>
+          <p>Effective TDD demands strong design intuition and the ability to decompose complex behaviors into smaller, testable units. Not all developers have honed these skills, and without them, TDD can seem cumbersome and impractical. For these individuals, practicing TDD would likely help them improve.</p>
+          <h3 id="perceptions-of-rockstar-developers">Perceptions of “Rockstar Developers”</h3>
+          <p>In a culture that often glorifies the image of the solitary, genius hacker writing perfect code in isolation, TDD might appear unglamorous. The methodical, iterative nature of TDD stands in stark contrast to the myth of the “flawless” programmer, leading some to dismiss it as a tedious chore rather than a valuable tool.</p>
+          <h2 id="one-tool-among-many">One Tool, Among Many</h2>
+          <p>Ultimately, it’s important to recognize that TDD is not a one-size-fits-all solution. While it offers significant benefits in terms of defect prevention, design feedback, and developer confidence, it is just one approach to achieving code quality.</p>
+          <p>The decision to adopt TDD should be based on a careful assessment of a team’s skills, project requirements, and overall workflow. As Kent Beck himself notes in various interviews and writings, the goal is always to produce code that others can rely on.</p>
+          <blockquote>
+            <p>“Am I recommending that you work this way? No. I’m recommending that you be able to work this way.”</p>
+          </blockquote>
+          <h2 id="conclusion">Conclusion</h2>
+          <p>Kent Beck’s Test Driven Development is much more than a testing strategy. It’s a philosophy that encourages responsibility, fosters better design, transforms uncertainty into confidence, and leaves a legacy of clear documenation. When a team embraces TDD, it benefits every engineer who works on the code in the future. If you’re looking to elevate your development practices and build software that stands the test of time, this book is an essential read. Happy testing!</p>
+          <div class="tags">
+            <a href="/tag/books" class="tag">
+              books
+            </a>
+            <a href="/tag/software-design" class="tag">
+              software design
+            </a>
+          </div>
+        </article>
+      </main>
+      <footer class="primary-footer">
+        <section class="container">
+          © 2025 Nick Arora
+        </section>
+      </footer>
+    </body>
+  </html>
