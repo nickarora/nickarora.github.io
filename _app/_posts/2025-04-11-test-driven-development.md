@@ -139,6 +139,12 @@ Effective TDD demands strong design intuition and the ability to decompose compl
 
 In a culture that often glorifies the image of the solitary, genius hacker writing perfect code in isolation, TDD might appear unglamorous. The methodical, iterative nature of TDD stands in stark contrast to the myth of the “flawless” programmer, leading some to dismiss it as a tedious chore rather than a valuable tool.
 
+### Counterproductive To Design
+
+John Ousterhout, author of _A Philosophy of Software Design_, argues that TDD can be counterproductive to good design. He makes the case that because TDD has a focus on getting specific features working, less time is dedicated to considering the design from a higher vantage point. This is an ongoing debate and Professor Ousterhout's argument has some merit.
+
+But how would Kent Beck respond? Beck would likely argue that emergent design beats "Big Up Front" design. You _learn_ real requirements by writing tests against your code, then evolve the design to meet them. Moreover, the tests allows the implementation to remain malleable. By continually reshaping under a safety net of tests, you ultimately arrive at the right design to solve your specific needs. In short, the refactor phase is just as critical as getting tests to pass.
+
 ## One Tool, Among Many
 
 Ultimately, it’s important to recognize that TDD is not a one-size-fits-all solution. While it offers significant benefits in terms of defect prevention, design feedback, and developer confidence, it is just one approach to achieving code quality.
