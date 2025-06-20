@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Software engineer specializing in full stack web application" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <title>User Stories Applied by Mike Cohn | Nick Arora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&&family=JetBrains+Mono:wght@200;300&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap">
+      <link rel="stylesheet" href="/assets/styles/base.css">
+    </head>
+    <body>
+      <header class="primary-header">
+        <section class="container">
+          <a class="site-id" href="/">Nick Arora</a>
+          <nav>
+            <label id="theme-toggle">
+              <input type="checkbox" />
+              <div class="icons">
+                <svg class="sun" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
+                <svg class="moon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+              </div>
+            </label>
+            <script>
+              const dark = "dark"
+              const light = "light"
+              const themeKey = "theme"
+
+              const toggle = document.getElementById("theme-toggle")
+              const checkbox = toggle.querySelector("input")
+
+              function loadTheme() {
+                let theme = localStorage.getItem(themeKey) ?? 'light'
+
+                checkbox.checked = theme === dark
+
+                const body = document.body
+                body.setAttribute("class", theme)
+              }
+
+              checkbox.addEventListener("change", function() {
+                const body = document.body
+                const reloadTheme = () => setTimeout(() => loadTheme(), 200);
+
+                if (this.checked) {
+                  localStorage.setItem(themeKey, dark)
+                  reloadTheme()
+                } else {
+                  localStorage.setItem(themeKey, light)
+                  reloadTheme()
+                }
+              })
+
+              document.addEventListener("DOMContentLoaded", () => {
+                loadTheme()
+              })
+            </script>
+          </nav>
+        </div>
+      </header>
+      <main class="primary-content">
+        <article class="post container flow">
+          <header>
+            <h1>User Stories Applied by Mike Cohn</h1>
+            <div class="post-metadata">
+              <time datetime="2025-06-14 00:00:00 +0000">June 14, 2025</time>
+              <span>
+                10 min read
+              </span>
+            </div>
+          </header>
+          <picture>
+            <source srcset="/assets/images/books/user-stories-applied/user-stories-applied.avif" type="image/avif" />
+            <source srcset="/assets/images/books/user-stories-applied/user-stories-applied.webp" type="image/webp" />
+            <img src="/assets/images/books/user-stories-applied/user-stories-applied.png" alt="User Stories Applied" />
+          </picture>
+          <p>How exactly do product development teams decide what to do?</p>
+          <p>At its core, this is a communication problem. Those who need the software must effectively communicate with those building it.</p>
+          <p>When communication is clear, resources are well-allocated, releases go smoothly, and software aligns with customer needs. When things <em>don’t go well</em>, we get unrealistic deadlines, misunderstandings, and products that fail to meet customer needs.</p>
+          <p>How can we avoid these common pitfalls?</p>
+          <p>Mike Cohn addresses this question in his influential book, <em>User Stories Applied: For Agile Software Development</em>.</p>
+          <h2 id="the-traditional-approach">The Traditional Approach</h2>
+          <p>The traditional way of solving this problem is by specifying an exhaustive list of “requirements.”  In practice this means writing lengthy, complex, implementation-focused descriptions of how a system should work:</p>
+          <div class="example">
+            <header>Requirements</header>
+            <p>The system supports password resets using SendGrid</p>
+            <p>The system allows users to save up to three unique credit cards in a relational database</p>
+            <p>+1000 other requirements...</p>
+          </div>
+          <p>At first, detailed requirements may seem beneficial.</p>
+          <p>Wouldn’t they help clarify features, control costs, and enhance predictability? Wouldn’t it be nice to have a fully formulated plan guiding product development decisions?</p>
+          <p>Cohn identifies several problems with this traditional approach.</p>
+          <h3 id="requirements-can-be-incorrect">Requirements can be incorrect</h3>
+          <p>Requirements written in advance are based on assumptions, which may later prove false. They may be written with the wrong target audience in mind or fail to consider technical constraints. The result: wasted time and effort.</p>
+          <p>Even worse, teams might rigidly adhere to the initial set of requirements, ignoring better solutions that emerge later. This rigidity risks delivering products that miss customer needs entirely.</p>
+          <h3 id="requirements-can-be-misleading">Requirements can be misleading</h3>
+          <p>Lengthy written requirements often seem comprehensive and complete, but this is an illusion. It’s impossible to anticipate and write down every decision in advance. Once the work begins in earnest, the deficiencies in the requirements are unearthed.</p>
+          <p>Making matters worse, written words are surprisingly imprecise. There’s no guarantee that two individuals will interpret a written statement in the same way.</p>
+          <p>Consider the requirement: “Each lunch order must include a choice of soup or salad and bread.”</p>
+          <p>Does this mean lunch orders will include:</p>
+          <ul class="example-misleading-requirements">
+            <li>Soup or (salad and bread)?</li>
+            <li>(Soup or salad) and bread?</li>
+          </ul>
+          <h3 id="requirements-are-hard-to-estimate">Requirements are hard to estimate</h3>
+          <p>Requirements, by their nature, are compound and contain many details. Consequently, it becomes difficult to know <em>when</em> they will be done. The longer the list of requirements,  the greater the uncertainty.</p>
+          <h3 id="requirements-are-difficult-for-everyone-to-understand">Requirements are difficult for everyone to understand</h3>
+          <p>Detailed requirements typically contain technical jargon, making them inaccessible to non-technical team members. This limits their use for effective collaboration.</p>
+          <p>So what other option is there?</p>
+          <h2 id="an-alternative-user-stories">An Alternative: User Stories</h2>
+          <p>One of the many fruitful practices that emerged out of the Chrysler <a href="https://en.wikipedia.org/wiki/Chrysler_Comprehensive_Compensation_System">C3 project</a> was the use of <em>user stories</em>. User stories are minimal, natural language descriptions of features, written from a user’s perspective.</p>
+          <div class="example">
+            <p>As a customer, I can regain access to my account when I forget my password</p>
+          </div>
+          <div class="example">
+            <p>As a frequent flyer, I don't have to re-enter payment details each time I book a flight</p>
+          </div>
+          <p>This simple shift in perspective provides significant benefits:</p>
+          <h3 id="user-stories-force-conversation">User Stories Force Conversation</h3>
+          <p>Unlike requirements, user stories make no attempt to detail precisely what must be built. User stories are, in fact, just <em>placeholders for a future conversation</em>.</p>
+          <p>Before the work can begin, a shared understanding of what is needed must be worked out in a conversation between the customer, the development team, and business representatives. These discussions clarify understanding, resolve ambiguities, and prevent wasted effort.</p>
+          <h3 id="user-stories-encourage-deferring-decisions">User Stories Encourage Deferring Decisions</h3>
+          <p>Deferring commitment is a well-known practice used by agile teams. The idea is to wait until the last responsible moment to make a critical decision.</p>
+          <p>This is not an elaborate form of procrastination; It’s a fundamental risk avoidance strategy. By waiting, the team maximizes available information before committing to a direction.</p>
+          <p>For this reason, user stories are written in terms of <em>goals</em> rather than solutions. By waiting until the work begins to discuss an specific solutions and acceptance criteria, the team is more likely to get things right.</p>
+          <h3 id="user-stories-simplify-estimation-and-prioritization">User Stories Simplify Estimation and Prioritization</h3>
+          <p>Each user story represents a single, independent, relatively small unit of work. If a story is too large, teams are encouraged to split it into smaller parts. As a result, estimation and prioritization of stories is manageable.</p>
+          <h3 id="user-stories-are-accessible-to-all-team-members">User Stories Are Accessible to All Team Members</h3>
+          <p>User stories intentionally use everyday language, ensuring all stakeholders (customers, developers, product teams, marketers) clearly understand them.</p>
+          <p>Not only does this approach ensure the team is aligned, it empowers all stakeholders to take an active role in shaping the software’s development. Customers are not relegated to testing the software <em>after</em> it is built; they can write stories, help determine their priority, and provide early feedback on proposed solutions.</p>
+          <h2 id="writing-effective-user-stories">Writing Effective User Stories</h2>
+          <p>Not all user stories are alike. Writing effective user stories requires a thoughtful approach. Good user stories exhibit the following qualities:</p>
+          <h3 id="valuable">Valuable</h3>
+          <p>User stories should be valuable to the purchasers or users of the system. If the planned work is not valuable to this audience, then it puts the business at risk of losing sales.</p>
+          <p>Cohn suggests including three essential elements in every user story:</p>
+          <ol>
+            <li>
+              <p><strong>Who wants the functionality</strong>. The user or purchaser of a typical product or system. Rather than referring to these individuals generally, it is often beneficial to be specific about the role the person is playing (e.g. “job seekers” or “employers”).</p>
+            </li>
+            <li>
+              <p><strong>What it is they want</strong>. The thing that is desired or needed. It should be framed as a goal while remaining agnostic as to how that goal is achieved.</p>
+            </li>
+            <li>
+              <p><strong>Why they want it</strong>. An explanation of why the individual wants the functionality. This is provided to help the team decide how best to solve the problem when the work begins.</p>
+            </li>
+          </ol>
+          <p>In the book, Cohn suggests a template which captures all three elements:</p>
+          <div class="example">
+            <p>As a (role), I want (function) so that (benefit)</p>
+          </div>
+          <h3 id="written-by-the-right-people">Written By The Right People</h3>
+          <p>Ideally, customers write user stories. The customer is in the best position to know what problems they’d like solved. If customers aren’t available, a representative from the business who deeply understands the users’ needs <em>may</em> serve as a proxy.</p>
+          <p>It is important to note that user proxies are risky. The proxy may unconsciously introduce personal biases. For example, the customer support team might prioritize features that reduce the number of support requests. Developers may downplay user issues in order to prioritize adopting a new technology. Those writing stories should strive to be as objective as possible.</p>
+          <blockquote>
+            <p>The best way to ensure that each story is valuable to the customer or users is
+              to have the customer write the stories.</p>
+          </blockquote>
+          <h3 id="written-for-the-right-audience">Written For The Right Audience</h3>
+          <p>User stories must be written in a common language that is understood by all stakeholders. If business stakeholders dominate, stories might become too vague. If developers dominate, excessive technical jargon can obscure meaning. The goal is to create crystal-clear, shared understanding.</p>
+          <h3 id="independent">Independent</h3>
+          <p>Care should be taken to avoid introducing dependencies between stories. Dependencies between stories lead to prioritization and planning problems. Consider the following user stories:</p>
+          <div class="example">
+            <p>As a customer, I can pay with my Visa credit card</p>
+          </div>
+          <div class="example">
+            <p>As a customer, I can pay with my MasterCard credit card</p>
+          </div>
+          <p>The developers believe it will take three days to add support for the first credit card. Each additional credit card is trivial.</p>
+          <p>This creates a dilemma: which user story should be given the three day estimate? Visa or MasterCard? We can do better by recognizing they are dependent and combining them.</p>
+          <div class="example">
+            <p>As a customer, I can pay by credit card</p>
+          </div>
+          <h3 id="negotiable">Negotiable</h3>
+          <p>Stories must remain negotiable. They are <em>not</em> written contracts describing functionality that the
+            developers <em>must</em> implement. Stories should be written with an understanding that the precise solution to the problem will be negotiated through <em>conversation</em> when the work begins.</p>
+          <blockquote>
+            <p>Because story cards are reminders to have a conversation rather than fully detailed requirements themselves, they do not need to include all relevant details.</p>
+          </blockquote>
+          <h3 id="right-sized">Right Sized</h3>
+          <p>Story size matters.</p>
+          <p>When user stories are too large, they can be difficult to estimate and prioritize. Teams should break these down into smaller, manageable pieces.</p>
+          <p>When user stories are too small, its an indication that the solution has been embedded into the stories. Teams should combine too-small stories into a single story that reflects their overarching goal.</p>
+          <blockquote>
+            <p>Like Goldilocks in search of a comfortable bed, some stories can be too big,
+              some can be too small, and some can be just right.</p>
+          </blockquote>
+          <h2 id="testable">Testable</h2>
+          <p>Stories must be written in such a way that they can be tested. Consider the following:</p>
+          <div class="example">
+            <p>As a user, I never have to wait too long for any screen to appear</p>
+          </div>
+          <p>This story is not easily tested because it contains the word “never” and because it does not define what “too long” means. How would someone verify that this story is complete?</p>
+          <h2 id="limits-of-user-stories">Limits of User Stories</h2>
+          <p>While user stories offer significant benefits, they aren’t universally applicable. Certain aspects, like system constraints (e.g. “handle 50,000 concurrent users”), are better documented separately. As with any agile practice, use user stories where they add clear value.</p>
+          <h2 id="conclusion">Conclusion</h2>
+          <p>Adopting user stories can significantly enhance communication, clarity, and adaptability within agile teams. By shifting from rigid, detailed requirements to concise, user-focused stories, teams improve their ability to collaborate and build valuable software. User stories aren’t a silver bullet but, applied thoughtfully, they provide a powerful foundation for successful agile software development.</p>
+          <style>
+            .example {
+              background-color: white;
+              color: black;
+              max-width: 55ch;
+              padding: 1rem;
+              border-radius: 0.25rem;
+              box-shadow: light-dark(#aaa, #1a1a1a) 0.125rem 0.125rem 0.5rem;
+            }
+
+            .example header {
+              font-weight: bold;
+              margin-bottom: 1rem;
+            }
+
+            .example p {
+              font-style: italic;
+              line-height: 1;
+            }
+
+            .example p + p {
+              margin-top: 1rem;
+            }
+
+            .example-misleading-requirements {
+              margin-top: 0;
+            }
+          </style>
+          <div class="tags">
+            <a href="/tag/books" class="tag">
+              books
+            </a>
+            <a href="/tag/process" class="tag">
+              process
+            </a>
+          </div>
+        </article>
+      </main>
+      <footer class="primary-footer">
+        <section class="container">
+          © 2025 Nick Arora
+        </section>
+      </footer>
+    </body>
+  </html>
