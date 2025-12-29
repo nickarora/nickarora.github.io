@@ -1,5 +1,12 @@
 <picture>
   <source srcset="/assets/images/{{ include.path }}/{{ include.asset }}/{{ include.asset }}.avif" type="image/avif">
   <source srcset="/assets/images/{{ include.path }}/{{ include.asset }}/{{ include.asset }}.webp" type="image/webp">
-  <img src="/assets/images/{{ include.path }}/{{ include.asset }}/{{ include.asset }}.png" alt="{{ include.alt_text }}">
+  <img
+    src="/assets/images/{{ include.path }}/{{ include.asset }}/{{ include.asset }}.png"
+    alt="{{ include.alt_text }}"
+    width="{{ include.width | default: '100%' }}"
+    height="{{ include.height }}"
+    style="aspect-ratio: {{ include.aspect_ratio | default: '2/1' }};"
+    onload="this.style.aspectRatio='auto'"
+  />
 </picture>
