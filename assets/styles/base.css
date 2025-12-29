@@ -351,6 +351,9 @@ max-width: 100%;
   em {
   font-style: italic;
   }
+  img {
+  background-color: var(--clr-secondary);
+  }
   .capitalize {
   text-transform: capitalize;
   }
