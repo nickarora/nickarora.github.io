@@ -12,151 +12,149 @@
     <title>Process | Nick Arora</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&&family=JetBrains+Mono:wght@200;300&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap">
-      <link rel="stylesheet" href="/assets/styles/base.css">
-    </head>
-    <body>
-      <header class="primary-header">
-        <section class="container">
-          <a class="site-id" href="/">Nick Arora</a>
-          <nav>
-            <label id="theme-toggle">
-              <input type="checkbox" />
-              <div class="icons">
-                <svg class="sun" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
-                <svg class="moon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-              </div>
-            </label>
-            <script>
-              const dark = "dark"
-              const light = "light"
-              const themeKey = "theme"
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&family=JetBrains+Mono:wght@200;300&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=block">
+    <link rel="stylesheet" href="/assets/styles/base.css">
+  </head>
+  <body>
+    <header class="primary-header">
+      <section class="container">
+        <a class="site-id" href="/">Nick Arora</a>
+        <nav>
+          <label id="theme-toggle">
+            <input type="checkbox" />
+            <div class="icons">
+              <svg class="sun" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
+              <svg class="moon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            </div>
+          </label>
+          <script>
+            const dark = "dark"
+            const light = "light"
+            const themeKey = "theme"
 
-              const toggle = document.getElementById("theme-toggle")
-              const checkbox = toggle.querySelector("input")
+            const toggle = document.getElementById("theme-toggle")
+            const checkbox = toggle.querySelector("input")
 
-              function loadTheme() {
-                let theme = localStorage.getItem(themeKey) ?? 'light'
+            function loadTheme() {
+              let theme = localStorage.getItem(themeKey) ?? 'light'
 
-                checkbox.checked = theme === dark
+              checkbox.checked = theme === dark
 
-                const body = document.body
-                body.setAttribute("class", theme)
+              const body = document.body
+              body.setAttribute("class", theme)
+            }
+
+            checkbox.addEventListener("change", function() {
+              const body = document.body
+              const reloadTheme = () => setTimeout(() => loadTheme(), 200);
+
+              if (this.checked) {
+                localStorage.setItem(themeKey, dark)
+                reloadTheme()
+              } else {
+                localStorage.setItem(themeKey, light)
+                reloadTheme()
               }
+            })
 
-              checkbox.addEventListener("change", function() {
-                const body = document.body
-                const reloadTheme = () => setTimeout(() => loadTheme(), 200);
-
-                if (this.checked) {
-                  localStorage.setItem(themeKey, dark)
-                  reloadTheme()
-                } else {
-                  localStorage.setItem(themeKey, light)
-                  reloadTheme()
-                }
-              })
-
-              document.addEventListener("DOMContentLoaded", () => {
-                loadTheme()
-              })
-            </script>
-          </nav>
-        </div>
-      </header>
-      <main class="primary-content">
-        <article class="container flow">
-          <h1 class="capitalize">process</h1>
-          <ul class="post-previews">
-            <li class="post-preview">
-              <a href="/blog/user-stories-applied">
-                <div class="metadata">
-                  <time datetime="2025-06-14 00:00:00 +0000">
-                    June 14, 2025
-                  </time>
-                  <div class="reading-time">
-                    <span>
-                      10 min read
-                    </span>
-                  </div>
+            document.addEventListener("DOMContentLoaded", () => {
+              loadTheme()
+            })
+          </script>
+        </nav>
+      </div>
+    </header>
+    <main class="primary-content">
+      <article class="container flow">
+        <h1 class="capitalize">process</h1>
+        <ul class="post-previews">
+          <li class="post-preview">
+            <a href="/blog/user-stories-applied">
+              <div class="metadata">
+                <time datetime="2025-06-14 00:00:00 +0000">
+                  June 14, 2025
+                </time>
+                <div class="reading-time">
+                  <span>
+                    10 min read
+                  </span>
                 </div>
-                <div class="title h4">
-                  User Stories Applied by Mike Cohn
+              </div>
+              <div class="title h4">
+                User Stories Applied by Mike Cohn
+              </div>
+              <p class="summary">
+                Explore how user stories improve collaboration, clarity, and adaptability in agile software development
+              </p>
+            </a>
+          </li>
+          <li class="post-preview">
+            <a href="/blog/checklist-manifesto">
+              <div class="metadata">
+                <time datetime="2024-12-07 00:00:00 +0000">
+                  December 7, 2024
+                </time>
+                <div class="reading-time">
+                  <span>
+                    7 min read
+                  </span>
                 </div>
-                <p class="summary">
-                  Explore how user stories improve collaboration, clarity, and adaptability in agile software development
-                </p>
-              </a>
-            </li>
-            <li class="post-preview">
-              <a href="/blog/checklist-manifesto">
-                <div class="metadata">
-                  <time datetime="2024-12-07 00:00:00 +0000">
-                    December 7, 2024
-                  </time>
-                  <div class="reading-time">
-                    <span>
-                      7 min read
-                    </span>
-                  </div>
+              </div>
+              <div class="title h4">
+                Checklist Manifesto by Atul Gawande
+              </div>
+              <p class="summary">
+                How a simple tool can help tackle complexity, reduce mistakes, and improve outcomes in high-stakes environments
+              </p>
+            </a>
+          </li>
+          <li class="post-preview">
+            <a href="/blog/toyota-kata">
+              <div class="metadata">
+                <time datetime="2024-11-13 00:00:00 +0000">
+                  November 13, 2024
+                </time>
+                <div class="reading-time">
+                  <span>
+                    5 min read
+                  </span>
                 </div>
-                <div class="title h4">
-                  Checklist Manifesto by Atul Gawande
+              </div>
+              <div class="title h4">
+                Toyota Kata by Mike Rother
+              </div>
+              <p class="summary">
+                A deep dive into the mindset and practices that allowed Toyota to succeed where others could not
+              </p>
+            </a>
+          </li>
+          <li class="post-preview">
+            <a href="/blog/turn-the-ship-around">
+              <div class="metadata">
+                <time datetime="2024-11-04 00:00:00 +0000">
+                  November 4, 2024
+                </time>
+                <div class="reading-time">
+                  <span>
+                    4 min read
+                  </span>
                 </div>
-                <p class="summary">
-                  How a simple tool can help tackle complexity, reduce mistakes, and improve outcomes in high-stakes environments
-                </p>
-              </a>
-            </li>
-            <li class="post-preview">
-              <a href="/blog/toyota-kata">
-                <div class="metadata">
-                  <time datetime="2024-11-13 00:00:00 +0000">
-                    November 13, 2024
-                  </time>
-                  <div class="reading-time">
-                    <span>
-                      5 min read
-                    </span>
-                  </div>
-                </div>
-                <div class="title h4">
-                  Toyota Kata by Mike Rother
-                </div>
-                <p class="summary">
-                  A deep dive into the mindset and practices that allowed Toyota to succeed where others could not
-                </p>
-              </a>
-            </li>
-            <li class="post-preview">
-              <a href="/blog/turn-the-ship-around">
-                <div class="metadata">
-                  <time datetime="2024-11-04 00:00:00 +0000">
-                    November 4, 2024
-                  </time>
-                  <div class="reading-time">
-                    <span>
-                      4 min read
-                    </span>
-                  </div>
-                </div>
-                <div class="title h4">
-                  Turn the Ship Around! by David Marquet
-                </div>
-                <p class="summary">
-                  A fresh perspective on leadership, centered around building empowered, accountable teams
-                </p>
-              </a>
-            </li>
-          </ul>
-        </article>
-      </main>
-      <footer class="primary-footer">
-        <section class="container">
-          © 2025 Nick Arora
-        </section>
-      </footer>
-    </body>
-  </html>
+              </div>
+              <div class="title h4">
+                Turn the Ship Around! by David Marquet
+              </div>
+              <p class="summary">
+                A fresh perspective on leadership, centered around building empowered, accountable teams
+              </p>
+            </a>
+          </li>
+        </ul>
+      </article>
+    </main>
+    <footer class="primary-footer">
+      <section class="container">
+        © 2025 Nick Arora
+      </section>
+    </footer>
+  </body>
+</html>
