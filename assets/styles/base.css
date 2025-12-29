@@ -24,9 +24,9 @@ max-width: 100%;
 }
 :root {
 /* fonts */
---ff-body: "Source Sans 3", sans-serif;
---ff-header: "Oswald", sans-serif;
---ff-code: "JetBrains Mono", monospace;
+--ff-body: 'Source Sans 3', sans-serif;
+--ff-header: 'Oswald', sans-serif;
+--ff-code: 'JetBrains Mono', monospace;
 /* font sizes */
 --fs-1: 0.75rem;
 --fs-2: 1rem;
@@ -361,6 +361,9 @@ max-width: 100%;
   text-align: center;
   height: 100%;
   }
+  #theme-toggle > input {
+  display: none;
+  }
   #theme-toggle {
   height: 1.5rem;
   width: 1.5rem;
@@ -369,9 +372,6 @@ max-width: 100%;
   border: 1px solid currentColor;
   border-radius: 100%;
   padding: 0 0.25rem;
-  }
-  #theme-toggle > input {
-  display: none;
   }
   #theme-toggle .icons {
   height: 2rem;
