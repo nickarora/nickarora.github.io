@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Software engineer specializing in full stack web application" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <title>Extreme Programming Explained by Kent Beck | Nick Arora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&family=JetBrains+Mono:wght@200;300&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=block">
+    <link rel="stylesheet" href="/assets/styles/base.css">
+  </head>
+  <body>
+    <header class="primary-header">
+      <section class="container">
+        <a class="site-id" href="/">Nick Arora</a>
+        <nav>
+          <label id="theme-toggle">
+            <input type="checkbox" />
+            <div class="icons">
+              <svg class="sun" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
+              <svg class="moon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            </div>
+          </label>
+          <script>
+            const dark = "dark"
+            const light = "light"
+            const themeKey = "theme"
+
+            const toggle = document.getElementById("theme-toggle")
+            const checkbox = toggle.querySelector("input")
+
+            function loadTheme() {
+              let theme = localStorage.getItem(themeKey) ?? 'light'
+
+              checkbox.checked = theme === dark
+
+              const body = document.body
+              body.setAttribute("class", theme)
+            }
+
+            checkbox.addEventListener("change", function() {
+              const body = document.body
+              const reloadTheme = () => setTimeout(() => loadTheme(), 200);
+
+              if (this.checked) {
+                localStorage.setItem(themeKey, dark)
+                reloadTheme()
+              } else {
+                localStorage.setItem(themeKey, light)
+                reloadTheme()
+              }
+            })
+
+            document.addEventListener("DOMContentLoaded", () => {
+              loadTheme()
+            })
+          </script>
+        </nav>
+      </div>
+    </header>
+    <main class="primary-content">
+      <article class="post container flow">
+        <header>
+          <h1>Extreme Programming Explained by Kent Beck</h1>
+          <div class="post-metadata">
+            <time datetime="2025-12-29 00:00:00 +0000">December 29, 2025</time>
+            <span>
+              10 min read
+            </span>
+          </div>
+        </header>
+        <picture>
+          <source srcset="/assets/images/books/epe/epe.avif" type="image/avif" />
+          <source srcset="/assets/images/books/epe/epe.webp" type="image/webp" />
+          <img src="/assets/images/books/epe/epe.png" alt="Extreme Programming Explained" width="100%" height="" style="aspect-ratio: 2/1;" onload="this.style.aspectRatio='auto'" />
+        </picture>
+        <p>Twenty-five years ago, Kent Beck saught to answer a fundamental question plaguing the software industry: how do teams build software when requirements are unclear, stakeholders have competing interests, priorities are changing, and uncertainty looms?</p>
+        <p>At the time, there was an assumption that careful upfront planning would eliminate risk. If the team planned and specified every detail, then everything would work out.</p>
+        <p>Kent knew this didn’t work. While consulting for projects in the late 80s and early 90s, Kent watched schedules slip, quality degrade, business needs get overlooked, and teams burn out trying desperately to meet impossible commitments.</p>
+        <p><em>Extreme Programming Explained</em> begins from a different premise: uncertainty is not a failure of planning. It is a fundamental property of software development. Rather than attempting to eliminate uncertainty, Kent designed Extreme Programming to work with it.</p>
+        <blockquote>
+          <p>“The problem isn’t change, because change is going to happen; the problem, rather, it’s our inability to cope with change.”</p>
+        </blockquote>
+        <h2 id="what-is-extreme-programming">What is Extreme Programming?</h2>
+        <p>Extreme Programming (“XP”) is a lightweight methodology for teams of any size developing software in environments where requirements are vague and can change rapidly.</p>
+        <p>XP is built from a small set of values, principles, and practices that work together to address the most common risks in software development:</p>
+        <ul>
+          <li>schedule slippage</li>
+          <li>high defect rates</li>
+          <li>brittle, unchangeable code</li>
+          <li>misunderstanding business needs</li>
+          <li>team frustration or turnover</li>
+        </ul>
+        <p>XP teams are better positioned to deliver value early, learn continuously, and adjust course as required. As Kent puts it, XP teams “play to win.”</p>
+        <h2 id="values-practices-and-principles">Values, Practices, and Principles</h2>
+        <p>XP is explicitly has three layers:</p>
+        <ul>
+          <li><strong>Values</strong> define what the team believes in</li>
+          <li><strong>Practices</strong> are techniques that demonstrate commitment to the values</li>
+          <li><strong>Principles</strong> help us translate values into new practices</li>
+        </ul>
+        <p>This layering matters. Practices without values are mechanical rituals. Values without practices remain aspirational. XP relies on the interaction between all three.</p>
+        <blockquote>
+          <p>“Practices by themselves are barren. Unless given purpose by values, they become rote.”</p>
+        </blockquote>
+        <h2 id="the-five-values-of-xp">The Five Values of XP</h2>
+        <h3 id="communication">Communication</h3>
+        <p>Communication is the most important value in XP. Many problems in software development (missed expectations, defects, rework, etc.) can be traced back to insufficient or ineffective communication.</p>
+        <p>XP practitioners value frequent, direct interaction between developers, customers, and stakeholders to ensure shared understanding.</p>
+        <blockquote>
+          <p>“Given the choice between an extremely skilled loner and a competent-but-social programmer, XP teams consistently choose the more social candidate.”</p>
+        </blockquote>
+        <p><strong>Simplicity</strong></p>
+        <p>XP asks teams to continually consider: what is the simplest thing that could possibly work? Simplicity enables faster delivery and clearer feedback. Importantly, Kent notes that simplicity is contextual: what is “simple” today may not be so “simple” tomorrow.</p>
+        <p><strong>Feedback</strong></p>
+        <p>Early in the book, Beck introduces a simple but powerful metaphor: software development is like driving.</p>
+        <p>Driving is not a one-time act of choosing a direction and then disengaging. It is a continuous process of paying attention, reading street signs, anticipating traffic, and making small corrections to ensure the car safely reaches its destination.</p>
+        <p>In the same way, feedback helps ensure software teams hit their target. Feedback is not about judgment; it is about course correction.</p>
+        <blockquote>
+          <p>“The XP philosophy is to start where you are now and move towards the ideal. From where you are now, could you improve a little bit?”</p>
+        </blockquote>
+        <p><strong>Courage</strong></p>
+        <p>Software development is inherently uncertain and often uncomfortable. Courage is required to speak uncomfortable truths, discard failing solutions, and make changes when new information emerges.</p>
+        <p><strong>Respect</strong></p>
+        <p>Respect means recognizing that no role is intrinsically more valuable than another and that software development is a collective effort. Without respect for people, for ideas, for the system, no set of practices can succeed.</p>
+        <blockquote>
+          <p>“In XP, valuable employees act respectful, play well with others, take initiative, [and] deliver on their commitments.”</p>
+        </blockquote>
+        <h2 id="practices-making-values-real">Practices: Making Values Real</h2>
+        <p>In contrast to the universality of values, practices are concrete. They are specific techniques that the team can immediately begin doing to <em>in service of their values</em>.</p>
+        <p>Kent supplies a a core set of practices that he recommends starting with. They’ve been carefully designed to fit together. Each reinforces the others, often in service of more than one value.</p>
+        <p><strong>Sit together</strong></p>
+        <p>Teams need a thoughfully designed collaborative space so that the barriers to interaction are minimized. In the early 2000s, this could easily be accomplished by having everyone sit together in the same room.</p>
+        <p>In an era of distributed teams, this is more difficult (though still possible). Use collaborative tools that broadcast availability, allow for interuption, and enable quick face to face contact.</p>
+        <p><strong>Whole team</strong></p>
+        <p>Stop thinking of the “development” team as a group of software developers. A successful product can only be built by a cross-functional team that includes all the skills and perspectives necessary for the project to succeed. This will likely include customers, business analysts, user experience specialists, software developers, and marketers.</p>
+        <blockquote>
+          <p>“Sharing power is pragmatic, not idealistic.”</p>
+        </blockquote>
+        <p><strong>Informative workspace</strong></p>
+        <p>Ensure your workspace makes important information visible. It should be immediately obvious who is working on what, what work has been prioritized, and how the team is doing with respect to their goals.</p>
+        <p><strong>Energized Work</strong></p>
+        <p>Workers should work only as many hours as they can remain productive and at a pace that is sustainable.</p>
+        <blockquote>
+          <p>“Software development is a game of insight, and insight comes to the prepared, rested, relaxed mind.”</p>
+        </blockquote>
+        <p><strong>Pair Programming</strong></p>
+        <p>Having two developers simultanouesly design, test, and implement new features affords numerous benefits. The collaborators keep each other on task, continuously review each other’s work, improve each other’s designs, and hold each other accountable to team practices.</p>
+        <p>Numerous studies have shown that (counterintuitively), pair programming ensures work is completed <em>faster</em>.  This is because the resulting work is defect free, aligned to business goals, and requires less rework.</p>
+        <blockquote>
+          <p>“Pair programmers keep each other on task. Brainstorm refinements to the system. Clarify ideas. Take initiative when their partner is stuck, thus lowering frustration.”</p>
+        </blockquote>
+        <p><strong>Stories</strong></p>
+        <p>Plan work using <a href="https://nickarora.github.io/blog/user-stories-applied">user stories</a>, minimal, natural language descriptions of features, written from a user’s perspective. Unlike rigid, detailed requirement documents, user stories force force business and technical professionals to interact. In doing so, the team aligns on what precisely what is required, why its valuable, and how long it will take.</p>
+        <p><strong>Continuous integration</strong></p>
+        <p>Programming complex applications is often a divide, conquer, and integrate problem. Beck recommends working in small increments and integrating changes into the whole application frequently (after no more than a couple of hours).</p>
+        <p>Continuous integration provides evidence that the system works and forces the team to remain coordinated.</p>
+        <p><strong>Test-First Programming</strong></p>
+        <p><a href="https://nickarora.github.io/blog/test-driven-development">Test-first programming</a> is a technique for building software where the developer <em>begins</em> by writing a failing test. He or she then should implement the bare minimum to get the software working. Finally, the code is refactored to improve the design.  The technique is often summarized as “<em>Red</em>, <em>Green</em>, <em>Refactor</em>”.</p>
+        <p>It addresses many problems:</p>
+        <ul>
+          <li>It minimizes the time needed to detect defects (and fix them)</li>
+          <li>It reduces scope creep. You need only implement what is required to satisfy your use case.</li>
+          <li>It provides a valuable signal when your design is wrong. If the tests are hard to write, it may indicate an issue with coupling or cohesion.</li>
+        </ul>
+        <h2 id="principles-bridging-values-and-action">Principles: Bridging Values and Action</h2>
+        <p>In the years since its publication, XP’s practices seem to get most of the attention. However, Kent is adamant that that practices should evolve. He fully expects teams to choose practices that suit the specific needs of their projects.</p>
+        <p>But creating new practices is more easily said than done. How do we know if a practice adheres to XP values or violates them?</p>
+        <p>Principles offer guidelines that help us quickly make these determinations.</p>
+        <blockquote>
+          <p>“…[P]rinciples will help us as we choose between alternatives. We will prefer an alternative that meets the principles more fully to one that doesn’t. Each principle embodies the values. A value may be vague. One person’s simple is another person’s complex. A principle is more concrete. Either you have rapid feedback or you don’t.”</p>
+        </blockquote>
+        <p>He enumerates several helpful principles to get us started:</p>
+        <ul>
+          <li><strong>Humanity</strong>: Software development is a people-based activity. Practices need to “address human needs, acknowledge human frailty, and leverage human strengths.”</li>
+          <li><strong>Economics</strong>:  Software development practices must have <em>economic value</em>. Every activity should help meet a business goal (otherwise who would be willing to pay for it?).</li>
+          <li><strong>Mutual benefit</strong>: Every activity should benefit all concerned. Favor mutual benefit over zero-sum competition.</li>
+          <li><strong>Self-similarity</strong>: Consistency in practices makes it easier for team members to understand and follow techniques.</li>
+          <li><strong>Improvement</strong>: Recognize that perfection is not achieved immediately. Beck encourages XP practitioners to “find a starting place, get started, and improve from there.”</li>
+          <li><strong>Diversity</strong>: Teams composed of heterogenous skills, attitudes, perspectives, and capabilities are better able to antcipate and solve problems.</li>
+          <li><strong>Reflection</strong>: Teams should be encouraged to think about how the work is done, what is working, and what is not.</li>
+          <li><strong>Baby steps</strong>: Problems are more effectively solved incrementally, not all at once.</li>
+          <li><strong>Failure</strong>: Failure can be a valuable form of feedback. By studying and learning from failures, setbacks can be transformed into value.</li>
+          <li><strong>Quality</strong>: Quality software supports business goals. It saves time and money, builds trust, and ensures the system can evolve.</li>
+          <li><strong>Accept responsibility</strong>: Responsibility can only be accepted, not assigned.</li>
+        </ul>
+        <h2 id="conclusion">Conclusion</h2>
+        <p>It’s hard to overstate the influence of <em>Extreme Programming Explained</em>. Few books have shaped modern software development in such a lasting way.</p>
+        <p>XP acknowledged uncertainty, embraced feedback, and made people (not processes) central to software development at a time when these ideas were considered “extreme”. It’s easy to forget how different things once were.</p>
+        <p>Although XP ideas have become mainstream, teams often adopt the practices mechanically and ritualistically. Revisiting the original text is valuable because it reconnects the <em>how</em> to the <em>why</em>.</p>
+        <div class="tags">
+          <a href="/tag/books" class="tag">
+            books
+          </a>
+          <a href="/tag/process" class="tag">
+            process
+          </a>
+        </div>
+      </article>
+    </main>
+    <footer class="primary-footer">
+      <section class="container">
+        © 2025 Nick Arora
+      </section>
+    </footer>
+  </body>
+</html>
