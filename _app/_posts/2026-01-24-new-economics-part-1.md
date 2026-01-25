@@ -125,4 +125,4 @@ Deming characterizes this as a failure mode. If quality is only considered after
 
 Deming’s diagnosis is clear: the prevailing style of management has caused significant economic decline.
 
-In part two, we'll explore his prescription: a new style of management that avoids these pitfalls.
+In [part two](/blog/new-economics-part-2), we'll explore his prescription: a new style of management that avoids these pitfalls.

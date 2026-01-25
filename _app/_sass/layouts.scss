@@ -1,5 +1,11 @@
-.flow > *+* {
-  margin-top: var(--flow-spacer);
+.flow {
+  > *+* {
+    margin-top: var(--flow-spacer);
+  }
+
+  > p + ul, p + ol {
+    margin-top: calc(var(--flow-spacer) * 0.25);
+  }
 }
 
 .container {

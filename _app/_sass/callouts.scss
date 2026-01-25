@@ -1,0 +1,16 @@
+.callout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+
+  box-shadow: inset 4px 0 0 0 var(--clr-accent);
+  background-color: var(--clr-secondary);
+  padding: 1em;
+
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.25em;
+  }
+}
