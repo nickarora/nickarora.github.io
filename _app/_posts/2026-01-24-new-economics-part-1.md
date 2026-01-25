@@ -61,7 +61,7 @@ Deming highlights several misguided approaches to achieving quality.
 
 It can be tempting to believe that a company can _buy_ its way into quality by investing in new machinery and automation.
 
-However, even when the automation works as intended, it often introduces unintended consequences. For example, it may operate at twice the capacity necessary (creating a pile of costly inventory), introduce the need additional inspections, or increase the cost of operation.
+However, even when the automation works as intended, it often introduces unintended consequences. For example, it may operate at twice the capacity necessary (creating a pile of costly inventory), introduce the need for additional inspections, or increase the cost of operation.
 
 > "If the reader could follow me around in my consultations, he would perceive that much automation and much new machinery is a source of poor quality and high cost"
 
@@ -120,6 +120,8 @@ Management may introduce processes, tools, and techniques to check for "quality.
 Deming characterizes this as a failure mode. If quality is only considered after the product is created, it means it is an afterthought. It should be defined with intention, considered at each step of the product's creation, and validated with the market.
 
 > "Quality can not be inspected into a product or service; it must be built into it."
+
+Deming famously used the "Red Bead Experiment" to illustrate poor management practices. It's [well worth the watch](https://deming.org/explore/red-bead-experiment/).
 
 ## A Better Approach
 
