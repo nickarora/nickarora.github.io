@@ -364,6 +364,20 @@ max-width: 100%;
   text-align: center;
   height: 100%;
   }
+  .callout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+  box-shadow: inset 4px 0 0 0 var(--clr-accent);
+  background-color: var(--clr-secondary);
+  padding: 1em;
+  }
+  .callout header {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 0.25em;
+  }
   #theme-toggle > input {
   display: none;
   }
@@ -410,6 +424,9 @@ max-width: 100%;
   }
   .flow > * + * {
   margin-top: var(--flow-spacer);
+  }
+  .flow > p + ul, .flow p + ol {
+  margin-top: calc(var(--flow-spacer) * 0.25);
   }
   .container {
   max-width: var(--container-max-width);

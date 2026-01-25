@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Software engineer specializing in full stack web application" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <title>The New Economics for Industry, Government & Education by W. E. Deming (Part II) | Nick Arora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&family=JetBrains+Mono:wght@200;300&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=block">
+    <link rel="stylesheet" href="/assets/styles/base.css">
+  </head>
+  <body>
+    <header class="primary-header">
+      <section class="container">
+        <a class="site-id" href="/">Nick Arora</a>
+        <nav>
+          <label id="theme-toggle">
+            <input type="checkbox" />
+            <div class="icons">
+              <svg class="sun" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
+              <svg class="moon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            </div>
+          </label>
+          <script>
+            const dark = "dark"
+            const light = "light"
+            const themeKey = "theme"
+
+            const toggle = document.getElementById("theme-toggle")
+            const checkbox = toggle.querySelector("input")
+
+            function loadTheme() {
+              let theme = localStorage.getItem(themeKey) ?? 'light'
+
+              checkbox.checked = theme === dark
+
+              const body = document.body
+              body.setAttribute("class", theme)
+            }
+
+            checkbox.addEventListener("change", function() {
+              const body = document.body
+              const reloadTheme = () => setTimeout(() => loadTheme(), 200);
+
+              if (this.checked) {
+                localStorage.setItem(themeKey, dark)
+                reloadTheme()
+              } else {
+                localStorage.setItem(themeKey, light)
+                reloadTheme()
+              }
+            })
+
+            document.addEventListener("DOMContentLoaded", () => {
+              loadTheme()
+            })
+          </script>
+        </nav>
+      </div>
+    </header>
+    <main class="primary-content">
+      <article class="post container flow">
+        <header>
+          <h1>The New Economics for Industry, Government &amp; Education by W. E. Deming (Part II)</h1>
+          <div class="post-metadata">
+            <time datetime="2026-01-24 00:00:00 +0000">January 24, 2026</time>
+            <span>
+              9 min read
+            </span>
+          </div>
+        </header>
+        <picture>
+          <source srcset="/assets/images/books/new-economics/new-economics.avif" type="image/avif" />
+          <source srcset="/assets/images/books/new-economics/new-economics.webp" type="image/webp" />
+          <img src="/assets/images/books/new-economics/new-economics.png" alt="The New Economics for Industry, Government &amp; Education" width="100%" height="" style="aspect-ratio: 2/1;" onload="this.style.aspectRatio='auto'" />
+        </picture>
+        <section class="callout callout-note">
+          <header>
+            <svg class="callout-icon" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true" fill="currentColor">
+              <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path>
+            </svg>
+            <span class="callout-title">Note</span>
+          </header>
+          <p class="callout-body">
+            <p>This article is the second part of a two part series summarizing the book. I’d recommend starting with <a href="/blog/new-economics-part-1">part one</a> if you have not yet read it.</p>
+          </p>
+        </section>
+        <p>In part one, we explored why, in Deming’s view, modern management is failing.</p>
+        <p>We now ask: how can we do better? Deming’s answer is a new approach to management, one based on collaboration, systems thinking, science, and human psychology.</p>
+        <p>The framework, which Deming calls “profound knowledge”, consists of four interrelated, reinforcing parts:</p>
+        <ol>
+          <li>Appreciation for systems</li>
+          <li>Knowledge of variation</li>
+          <li>Theory of knowledge</li>
+          <li>Psychology</li>
+        </ol>
+        <h2 id="appreciation-for-systems">Appreciation for systems</h2>
+        <p>The first, and arguably most important, aspect of profound knowledge is appreciation for <em>systems</em>.</p>
+        <p>A system is anything that:</p>
+        <ol>
+          <li>Is comprised of parts (“components”)</li>
+          <li>That work together (“interdependent”)</li>
+          <li>in order to accomplish some objective (an “aim”)</li>
+        </ol>
+        <blockquote>
+          <p>“A system is a network of interdependent components that work together to try to accomplish the aim of the system.”</p>
+        </blockquote>
+        <p>By this definition, a bowling team, orchestra, and business are all types of systems. The bowling team’s team members work together to win the championship. The orchestra’s musicians collaborate to perform intricate pieces. A business’s employees, suppliers, and distributors work together to create sustainable profit.</p>
+        <p>Not all systems are effective. The most effective systems embody key characteristics:</p>
+        <p><strong>The system’s aim benefits all participants</strong></p>
+        <p>A system’s aim must be carefully chosen to create long-term value for everyone touched by the system. When there is organization-wide agreement on the aim, cooperation is incentivized and the system stands a better chance of succeeding.</p>
+        <blockquote>
+          <p>“It is important that an aim never be defined in terms of a specific activity or method. It must always relate to a better life for everyone.”</p>
+        </blockquote>
+        <p><strong>The system’s components work in concert to achieve the aim</strong></p>
+        <p>Systems succeed when everyone involved directs their efforts towards achievement of the <em>system’s aim</em>. If individual departments or people are more interested in achieving their <em>own individual goals</em> (e.g. a quota or promotion), the system is harmed. Optimizing parts does not optimize the whole.</p>
+        <blockquote>
+          <p>“The obligation of any component is to contribute its best to the system, not to maximize its own production.”</p>
+        </blockquote>
+        <p><strong>The system considers the future</strong></p>
+        <p>Participants in the system must account for the future. This requires some level of prediction.</p>
+        <p>Managers and employees must constantly scan the environment (technical, social, and economic) to perceive the need for innovation. The best systems direct their efforts strategically; they do not become passive victims of circumstance.</p>
+        <blockquote>
+          <p>“A company can to some extent govern its own future”</p>
+        </blockquote>
+        <p><strong>The system is managed</strong></p>
+        <p>Leadership must have a deep understanding of the interrelationships between the components in a system. They must be able to predict how a proposed change will affect things. In effective systems, leadership is constantly applying course correction to ensure the system remains on target.</p>
+        <blockquote>
+          <p>“A system will not manage itself. Left to themselves in the Western world, components become selfish, competitive, independent profit centers, and thus destroy the system.”</p>
+        </blockquote>
+        <h2 id="knowledge-of-variation">Knowledge of Variation</h2>
+        <p>It is one thing to recognize a system, and it is another thing entirely to <em>improve</em> it.</p>
+        <p>Well-intentioned leaders often seek out data to help improve the performance their organizations. It is in this context that they first encounter <em>variation</em>. “Why did we have so many defects last month?” “Why were sales up in September?” “How can we repeat last week’s success?”</p>
+        <p>These are the right questions to ask. But Deming argues, without <em>statistical</em> understanding of variation, these questions are impossible to answer.</p>
+        <blockquote>
+          <p>“Variation there will always be…[the question is] what is the variation trying to tell us about a process and about the people who work in it?”</p>
+        </blockquote>
+        <p>A manager’s role is not to <em>eliminate</em> variation but to <em>understand</em> its causes and predict its behavior. Learning this skill enables managers to remove problems and improve the system.</p>
+        <h3 id="types-of-variation">Types of Variation</h3>
+        <p>To that end, it is important to understand that there two types of variation.</p>
+        <blockquote>
+          <p>“[To] understand the distinction between common causes of variation and special causes [is] to understand the kind of action to take”</p>
+        </blockquote>
+        <h4 id="common-cause-variation">Common cause variation</h4>
+        <p>Common cause variation is the <em>natural result</em> of the system <em>as designed</em>.</p>
+        <p>Consider, for example, a spike in traffic accidents after a city installs unintelligible road signs. The signage has led to driver confusion and collisions. The accidents are the natural result of the system (and stem from a “common cause”).</p>
+        <blockquote>
+          <p>“Common causes of variation stay the same day to day, lot to lot.”</p>
+        </blockquote>
+        <p>When common cause variation is observed, management must examine the system and seek out <em>systemic</em> improvements (e.g. ensure all road signs are clear).</p>
+        <h4 id="special-cause-variation">Special cause variation</h4>
+        <p>Special cause variation is “something special,” not part of the set of common causes. When there is a special cause, a manager should learn about problem and develop countermeasures to avoid that problem in the future (if recurrence is even possible).</p>
+        <p>Consider delayed shipments caused by a natural disaster. Unless the natural disaster is likely to reoccur, any changes to the system would be improper.</p>
+        <h3 id="common-mistakes">Common Mistakes</h3>
+        <p>While consulting, Deming observed that managers frequently made two mistakes when attempting to address variation.</p>
+        <ol>
+          <li>Treating a result as a <em>special cause</em> when it came from <em>common causes</em></li>
+          <li>Treating a result as a <em>common cause</em> when it came from a <em>special cause</em></li>
+        </ol>
+        <p>Consider a manager of a car dealership.</p>
+        <p>For the past three weeks, they’ve sold 200 cars each month. This month they only sold 150. In a panic, he screams “Who messed up?” and fires some of his staff. He didn’t consider that 150 car sales was not a dip at all. An analysis of the data shows it’s within the normal range of sales that the dealership might expect. This is a type 1 mistake.</p>
+        <p>A few months later, the dealership sees 400 car sales in a single month. Excitedly, he declares “this is the new norm, guys!” and doubles his staff. The increase in sales was due to a limited time tax rebate that has now expired. This is a type 2 mistake.</p>
+        <p>When managers make changes without understanding, they interfere with the system and make matters worse. Deming referred to this type of uninformed reaction as <em>tampering</em>.</p>
+        <blockquote>
+          <p>“The result of tampering is only to increase in the future the production of faulty items and mistakes, and to increase costs – exactly the opposite of what we wish to accomplish.”</p>
+        </blockquote>
+        <h2 id="theory-of-knowledge">Theory of Knowledge</h2>
+        <p>Applying “theory of knowledge” is the antithesis of tampering. When you apply theory, you are using evidence to <em>predict</em> how a system will respond to a proposed change.</p>
+        <blockquote>
+          <p>“The theory of knowledge helps us to understand that management in any form is prediction.”</p>
+        </blockquote>
+        <p>This is why Deming discourages copying so-called “best practices.” A manager applying theory will recognize that the conditions that made a practice successful in one context is not necessarily present in <em>all</em> contexts. Imitation does not guarantee success.</p>
+        <p>To the extent possible, Deming recommends gathering evidence based on experiments to support theories. The model used in the book is the <a href="https://deming.org/explore/pdsa/">Plan-Do-Study-Act (PDSA)</a> cycle, which emphasizes incremental change and reflection.</p>
+        <blockquote>
+          <p>“Without theory, there is no learning. Theory is a window into the world. Theory leads to prediction.”</p>
+        </blockquote>
+        <h2 id="psychology">Psychology</h2>
+        <p>The final element of Profound Knowledge is an understanding of people.</p>
+        <p>Deming rejected the assumption that people are primarily motivated by rewards and punishments. He believed people are born with an “intrinsic motivation” to learn, achieve, and cooperate.</p>
+        <p>Deming argues that modern systems destroy these qualities through grades, rankings, merit pay, and forced competition.</p>
+        <blockquote>
+          <p>“A show of appreciation to someone may mean far more to him than monetary reward”</p>
+        </blockquote>
+        <p>Effective leaders eschew judgement. They create effective, cooperative workers by understanding and satisfying the intrinsic motivations of the people they lead.</p>
+        <h2 id="conclusion">Conclusion</h2>
+        <p>Most readers of this series will have some experience with traditional management.</p>
+        <p>Workers labor under deadline pressure to meet arbitrary quotas and adhere to inefficient processes. When the target isn’t met, the workers are blamed. Management unflinchingly carries on.</p>
+        <p>These conditions are unsustainable, oppressive, and demoralizing. In <em>New Economics</em>, Deming asks a simple question: why continue to practice methods we know don’t work?</p>
+        <p>Deming’s system of profound knowledge offers an alternative: a management philosophy guided by systems thinking, appreciation of variation, theory, and respect for human dignity.</p>
+        <p>In the final book he penned before his passing, Deming gives us an opportunity to transform ourselves, our relationships, and our businesses.</p>
+        <blockquote>
+          <p>“Once the individual understands the system of profound knowledge, he will apply its principles in every kind of relationship with other people.”</p>
+        </blockquote>
+        <div class="tags">
+          <a href="/tag/books" class="tag">
+            books
+          </a>
+          <a href="/tag/process" class="tag">
+            process
+          </a>
+          <a href="/tag/leadership" class="tag">
+            leadership
+          </a>
+        </div>
+      </article>
+    </main>
+    <footer class="primary-footer">
+      <section class="container">
+        © 2026 Nick Arora
+      </section>
+    </footer>
+  </body>
+</html>
