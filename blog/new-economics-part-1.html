@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Software engineer specializing in full stack web application" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest">
+    <title>The New Economics for Industry, Government & Education by by W. E. Deming (Part I) | Nick Arora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&family=JetBrains+Mono:wght@200;300&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=block">
+    <link rel="stylesheet" href="/assets/styles/base.css">
+  </head>
+  <body>
+    <header class="primary-header">
+      <section class="container">
+        <a class="site-id" href="/">Nick Arora</a>
+        <nav>
+          <label id="theme-toggle">
+            <input type="checkbox" />
+            <div class="icons">
+              <svg class="sun" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"></path></svg>
+              <svg class="moon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            </div>
+          </label>
+          <script>
+            const dark = "dark"
+            const light = "light"
+            const themeKey = "theme"
+
+            const toggle = document.getElementById("theme-toggle")
+            const checkbox = toggle.querySelector("input")
+
+            function loadTheme() {
+              let theme = localStorage.getItem(themeKey) ?? 'light'
+
+              checkbox.checked = theme === dark
+
+              const body = document.body
+              body.setAttribute("class", theme)
+            }
+
+            checkbox.addEventListener("change", function() {
+              const body = document.body
+              const reloadTheme = () => setTimeout(() => loadTheme(), 200);
+
+              if (this.checked) {
+                localStorage.setItem(themeKey, dark)
+                reloadTheme()
+              } else {
+                localStorage.setItem(themeKey, light)
+                reloadTheme()
+              }
+            })
+
+            document.addEventListener("DOMContentLoaded", () => {
+              loadTheme()
+            })
+          </script>
+        </nav>
+      </div>
+    </header>
+    <main class="primary-content">
+      <article class="post container flow">
+        <header>
+          <h1>The New Economics for Industry, Government &amp; Education by by W. E. Deming (Part I)</h1>
+          <div class="post-metadata">
+            <time datetime="2026-01-24 00:00:00 +0000">January 24, 2026</time>
+            <span>
+              8 min read
+            </span>
+          </div>
+        </header>
+        <picture>
+          <source srcset="/assets/images/books/new-economics/new-economics.avif" type="image/avif" />
+          <source srcset="/assets/images/books/new-economics/new-economics.webp" type="image/webp" />
+          <img src="/assets/images/books/new-economics/new-economics.png" alt="The New Economics for Industry, Government &amp; Education" width="100%" height="" style="aspect-ratio: 2/1;" onload="this.style.aspectRatio='auto'" />
+        </picture>
+        <p>The trappings of modern management feel inevitable. Rankings, incentives, performance reviews, numeric quarterly goals, and competition between teams are treated as facts of organizational life. They are natural, necessary, and beyond question.</p>
+        <p>When these practices fail, how do we respond?</p>
+        <p>We double down: more metrics, more pressure, more accountability, more of the same. William Edwards Deming believed this reflex was not only wrong but dangerous.</p>
+        <p>In <em>The New Economics for Industry, Government &amp; Education</em>, Deming argues that the prevailing style of management is a recent invention, not a law of nature. He makes the case that it is a primary source of waste, economic decline, and erosion of human dignity at work.</p>
+        <p>He offers a new way of thinking.</p>
+        <h2 id="quality">Quality</h2>
+        <p>Deming’s opens with a simple question: how is America doing? His answer is unsparing.</p>
+        <p>Despite unprecedented effort and technological sophistication, the U.S. economy has, in his view, been in decline for decades. Manufacturing has migrated abroad, trade imbalances worsened, and productivity gains have failed to translate into durable prosperity.</p>
+        <blockquote>
+          <p>“We have been wasting our natural resources, and worse, as we shall see, destroying our people.”</p>
+        </blockquote>
+        <p>In order for American companies to win back the market, Deming argues that companies must renew their focus on <em>quality</em>, a characterstic he defines by its effect on the customer and on the business:</p>
+        <blockquote>
+          <p>“A product or service possesses quality if it helps somebody and enjoys a good and sustainable market.”</p>
+        </blockquote>
+        <p>In Deming’s view, quality is achieved by producing something serves a customer to their satisfaction (evidenced by their willingness to pay for it).</p>
+        <p>Consider what happens when you shop for an apple. Do you select the first apple you see? Or do you pick one up, inspect it for bruises, evaluate its shape, and check the color for uniformity? In this process, you are showing an appreciation for variation and, ultimately, making an economic decision based on <em>quality</em>.</p>
+        <p>Deming also recognizes that the product must <em>evolve</em> over time for the business to remain sustainable. The business cannot count on brand loyalty alone. If one apple producer develops a breeding technique that significantly improves flavor, even long time customers are likely to switch.</p>
+        <blockquote>
+          <p>“The moral is that it is necessary to innovate, to predict needs of the customer, give him more. He that innovates and is lucky will take the market.”</p>
+        </blockquote>
+        <h2 id="misguided-approaches-to-quality">Misguided Approaches to Quality</h2>
+        <p>It’s worth noting what Deming has <em>omitted</em> from this definition. Quality is <em>not</em> conformance to specification. It’s also <em>not</em> a synonym for “zero defects.”</p>
+        <p>Consider companies that once manufactured carburetors. They’ve all gone out of business, even those with tight tolerances, low defect rates, and hard-working employees.</p>
+        <p>What happened?</p>
+        <p>Innovation. A superior technology, the fuel injector, displaced carbureators altogether. If a business’s focus is misplaced or short-sighted, it will fail despite its best efforts.</p>
+        <p>Deming highlights several misguided approaches to achieving quality.</p>
+        <h3 id="reliance-on-automation-machinery-or-computers">Reliance on Automation, machinery, or computers</h3>
+        <p>It can be tempting to believe that a company can <em>buy</em> its way into quality by investing in new machinery and automation.</p>
+        <p>However, even when the automation works as intended, it often introduces unintended consequences. For example, it may operate at twice the capacity necessary (creating a pile of costly inventory), introduce the need additional inspections, or increase the cost of operation.</p>
+        <blockquote>
+          <p>“If the reader could follow me around in my consultations, he would perceive that much automation and much new machinery is a source of poor quality and high cost”</p>
+        </blockquote>
+        <h3 id="delegating-quality">Delegating Quality</h3>
+        <p>Sometimes management pushes quality concerns to the people responsible for building the product. Afterall, if the workers just made the product correctly, the business would thrive, right?</p>
+        <p>However, these individuals have no part in the design of the product. They can only do their job, meet their quota, conform to specifications, and stamp out fires.</p>
+        <p>They are helpless to define quality or innovate. Hard working, highly motivated employees are not enough to ensure business success.</p>
+        <blockquote>
+          <p>“Hard work and best efforts will not by themselves dig us out of the pit”</p>
+        </blockquote>
+        <h3 id="merit-systems-rankings-or-annual-appraisals">Merit systems, rankings, or annual appraisals</h3>
+        <p>A common tactic of management is to reward employees based on their performance (with greater job titles and pay increases). The goal is to encourage quality output from workers through introduction of a merit system.</p>
+        <p>However, this approach fails to recognize that apparent performance is often attributable to the system in which the individual works. For example, a worker may seem more productive because he <em>happens</em> to receive fewer defects from an upstream process.</p>
+        <p>Moreover, ranking creates competition between people, salesmen, teams, and divisions. For hard workers who aren’t being rewarded, it can be demoralizing.</p>
+        <blockquote>
+          <p>“Ranking is a farce. Apparent performance is actually attributable mostly to the system that the individual works in, not to the individual himself.”</p>
+        </blockquote>
+        <h3 id="management-by-objective-and-numerical-goals">Management by objective and numerical goals</h3>
+        <p>Managers frequently assume that if every division under their control accomplishes its assigned objective, the whole company succeeds. These objectives often take the form of numerical goals: parts produced, cars sold, deadlines met, etc.</p>
+        <p>However, this approach to management fails to account for dependencies between divisions in the organization. The purchasing deparment may accomplish its goal of saving 10% over last year, while making it significantly more difficult for the manufacturing department to achieve <em>its</em> quality target. The objectives have inadvertently created competition.</p>
+        <blockquote>
+          <p>“Anybody will meet the quota (goal) allotted to him. He is not responsible for the losses so generated.”</p>
+        </blockquote>
+        <p>Moreover, the goals, unless selected with care, can harm quality. For example, if workers are proccupied with meeting monthly production quotas, they are left with little time to consider opportunities to increase customer satisfaction or for innovation.</p>
+        <blockquote>
+          <p>“The game is numbers, not quality”</p>
+        </blockquote>
+        <p>Finally, numerical goals incentivize hitting targets <em>no matter how</em>. When sales quotas are established, sales are sometimes pursued to the determinent of the customer or the reputation of the company. If the target cannot be met, numbers are misleadingly recharacterized (or altogether made up) when reported.</p>
+        <blockquote>
+          <p>“A numerical goal leads to distortion and faking, especially when the system is not capable of meeting the goal.”</p>
+        </blockquote>
+        <h3 id="short-term-thinking">Short-term thinking</h3>
+        <p>Management is often reactive. Decisions are made in service of short-term goals: maximize the price of company’s stock, maintain shareholder dividends, or impress stakeholders.</p>
+        <p>While short-term problems cannot be ignored, it is fatal to work <em>exclusively</em> on them. Doing so affords no opportunity to consider what improvements or innovations are required to keep the business afloat five years in the future.</p>
+        <blockquote>
+          <p>“No number of successes in short-term problems will ensure long-term success”</p>
+        </blockquote>
+        <p>Furthermore, a myopic focus on short-term goals can harm quality. For example, if management prioritizes buying materials and services at the lowest bid, the product may become less reliable (reducing customer satisfaction).</p>
+        <blockquote>
+          <p>“It might be better for some of us to pay [more]…to receive better service”</p>
+        </blockquote>
+        <h3 id="inspecting-in-quality">Inspecting in quality</h3>
+        <p>Management may introduce processes, tools, and techniques to check for “quality.” The business may go so far as to establish a department whose sole purpose is to verify “quality.”</p>
+        <p>Demining characterizes this as a failure mode. If quality is only considered after the product is created, it means it is an afterthought. It should be defined with intention, considered at each step of the product’s creation, and validated with the market.</p>
+        <blockquote>
+          <p>“Quality can not be inspected into a product or service; it must be built into it.”</p>
+        </blockquote>
+        <h2 id="a-better-approach">A Better Approach</h2>
+        <p>Deming’s diagnosis is clear: the prevailing style of management has caused significant economic decline.</p>
+        <p>In part two, we’ll explore his prescription: a new style of management that avoids these pitfalls.</p>
+        <div class="tags">
+          <a href="/tag/books" class="tag">
+            books
+          </a>
+          <a href="/tag/process" class="tag">
+            process
+          </a>
+          <a href="/tag/leadership" class="tag">
+            leadership
+          </a>
+        </div>
+      </article>
+    </main>
+    <footer class="primary-footer">
+      <section class="container">
+        © 2026 Nick Arora
+      </section>
+    </footer>
+  </body>
+</html>
