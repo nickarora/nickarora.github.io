@@ -76,7 +76,7 @@ Leadership must have a deep understanding of the interrelationships between the 
 
 It is one thing to recognize a system, and it is another thing entirely to _improve_ it.
 
-Well-intentioned leaders often seek out data to help improve the performance their organizations. It is in this context that they first encounter _variation_. “Why did we have so many defects last month?” “Why were sales up in September?” “How can we repeat last week's success?”
+Well-intentioned leaders often seek out data to help improve the performance of their organizations. It is in this context that they first encounter _variation_. “Why did we have so many defects last month?” “Why were sales up in September?” “How can we repeat last week's success?”
 
 These are the right questions to ask. But Deming argues, without _statistical_ understanding of variation, these questions are impossible to answer.
 
@@ -98,7 +98,7 @@ Consider, for example, a spike in traffic accidents after a city installs uninte
 
 > "Common causes of variation stay the same day to day, lot to lot."
 
-When common cause variation is observed, management must examine the system and seek out _systemic_ improvements (e.g. ensure all road signs are clear).
+When common cause variation is observed, management must examine the system and seek out _systemic_ improvements (e.g. ensure all road signs are clear). Deming famously estimated that 94% of most systems' troubles are attributable to common causes.
 
 #### Special cause variation
 
