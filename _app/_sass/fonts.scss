@@ -1,7 +1,7 @@
 :root {
   /* fonts */
-  --ff-body: 'Source Sans 3', sans-serif;
-  --ff-header: 'Oswald', sans-serif;
+  --ff-body: 'Plus Jakarta Sans', sans-serif;
+  --ff-header: 'Lora', serif;
   --ff-code: 'JetBrains Mono', monospace;
 
   /* font sizes */
@@ -10,7 +10,7 @@
   --fs-3: 1.35rem;
   --fs-4: 1.75rem;
   --fs-5: 2.25rem;
-  --fs-6: 3rem;
+  --fs-6: 2.75rem;
 
   /* font weights */
   --fw-1: 200;
@@ -25,18 +25,18 @@
 
 @media (width <= 720px) {
   :root {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
 @media (width <= 1440px) {
   :root {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 
 @media (width > 1440px) {
   :root {
-    font-size: 24px;
+    font-size: 20px;
   }
 }

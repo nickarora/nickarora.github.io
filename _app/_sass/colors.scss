@@ -1,22 +1,22 @@
 :root {
   /* palette */
-  --clr-background: light-dark(#fff, #171e29);
-  --clr-foreground: light-dark(#1a1a1a, #fff);
-  --clr-primary: light-dark(#e4d3b5, #39506f);
-  --clr-secondary: light-dark(#f3f0eb, #212c3d);
+  --clr-background: light-dark(#f7f4ef, #1f1b17);
+  --clr-foreground: light-dark(#252018, #ede8df);
+  --clr-primary: light-dark(#ddd4c0, #4a3f33);
+  --clr-secondary: light-dark(#eeeae2, #2a231d);
   --clr-tertiary: light-dark(
     color-mix(in lab, var(--clr-background) 90%, var(--clr-foreground)),
     color-mix(in lab, var(--clr-background) 80%, var(--clr-foreground)));
-  --clr-accent: light-dark(#daab5b, #eca52d);
+  --clr-accent: light-dark(#a0522d, #c98a50);
 
   /* code highlighting */
-  --clr-code-background: light-dark(#f3f0eb, #212c3d);
+  --clr-code-background: light-dark(#eeeae2, #2a231d);
   --clr-code-error: light-dark(#d72828, #e74343);
   --clr-code-background-error: light-dark(transparent,  transparent);
   --clr-code-comment: light-dark(#5479a2, #ffa8a8);
-  --clr-code-constant: light-dark(#1a1a1a, #fff);
+  --clr-code-constant: light-dark(#252018, #ede8df);
   --clr-code-literal: light-dark(#bd882d, #e6db74);
-  --clr-code-name: light-dark(#1a1a1a, #fff);
+  --clr-code-name: light-dark(#252018, #ede8df);
   --clr-code-operator: light-dark(#bd882d, #e6db74);
   --clr-code-date: light-dark(#bd882d, #e6db74);
   --clr-code-other: light-dark(#15844b, #3aeaac);

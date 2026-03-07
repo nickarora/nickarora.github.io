@@ -30,7 +30,7 @@ strong {
   font-weight: var(--fw-4);
 }
 
-h1, h2, h3, .h1, .h2, .h3 {
+h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
   font-family: var(--ff-header);
   font-weight: var(--fw-3);
   letter-spacing: -0.75px;
@@ -50,11 +50,7 @@ h1, h2, h3, .h1, .h2, .h3 {
 }
 
 .h4, h4 {
-  font-family: var(--ff-body);
-  font-weight: var(--fw-3);
   font-size: var(--fs-3);
-  letter-spacing: -0.75px;
-  line-height: var(--lh-1);
 }
 
 ul, ol {
