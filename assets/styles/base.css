@@ -24,8 +24,8 @@ max-width: 100%;
 }
 :root {
 /* fonts */
---ff-body: 'Source Sans 3', sans-serif;
---ff-header: 'Oswald', sans-serif;
+--ff-body: 'Plus Jakarta Sans', sans-serif;
+--ff-header: 'Lora', serif;
 --ff-code: 'JetBrains Mono', monospace;
 /* font sizes */
 --fs-1: 0.75rem;
@@ -33,7 +33,7 @@ max-width: 100%;
 --fs-3: 1.35rem;
 --fs-4: 1.75rem;
 --fs-5: 2.25rem;
---fs-6: 3rem;
+--fs-6: 2.75rem;
 /* font weights */
 --fw-1: 200;
 --fw-2: 300;
@@ -45,37 +45,37 @@ max-width: 100%;
 }
 @media (width <= 720px) {
   :root {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 @media (width <= 1440px) {
   :root {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 @media (width > 1440px) {
   :root {
-  font-size: 24px;
+  font-size: 20px;
   }
   }
   :root {
   /* palette */
-  --clr-background: light-dark(#fff, #171e29);
-  --clr-foreground: light-dark(#1a1a1a, #fff);
-  --clr-primary: light-dark(#e4d3b5, #39506f);
-  --clr-secondary: light-dark(#f3f0eb, #212c3d);
+  --clr-background: light-dark(#f7f4ef, #1f1b17);
+  --clr-foreground: light-dark(#252018, #ede8df);
+  --clr-primary: light-dark(#ddd4c0, #4a3f33);
+  --clr-secondary: light-dark(#eeeae2, #2a231d);
   --clr-tertiary: light-dark(
   color-mix(in lab, var(--clr-background) 90%, var(--clr-foreground)),
   color-mix(in lab, var(--clr-background) 80%, var(--clr-foreground)));
-  --clr-accent: light-dark(#daab5b, #eca52d);
+  --clr-accent: light-dark(#a0522d, #c98a50);
   /* code highlighting */
-  --clr-code-background: light-dark(#f3f0eb, #212c3d);
+  --clr-code-background: light-dark(#eeeae2, #2a231d);
   --clr-code-error: light-dark(#d72828, #e74343);
   --clr-code-background-error: light-dark(transparent, transparent);
   --clr-code-comment: light-dark(#5479a2, #ffa8a8);
-  --clr-code-constant: light-dark(#1a1a1a, #fff);
+  --clr-code-constant: light-dark(#252018, #ede8df);
   --clr-code-literal: light-dark(#bd882d, #e6db74);
-  --clr-code-name: light-dark(#1a1a1a, #fff);
+  --clr-code-name: light-dark(#252018, #ede8df);
   --clr-code-operator: light-dark(#bd882d, #e6db74);
   --clr-code-date: light-dark(#bd882d, #e6db74);
   --clr-code-other: light-dark(#15844b, #3aeaac);
@@ -307,7 +307,7 @@ max-width: 100%;
   strong {
   font-weight: var(--fw-4);
   }
-  h1, h2, h3, .h1, .h2, .h3 {
+  h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
   font-family: var(--ff-header);
   font-weight: var(--fw-3);
   letter-spacing: -0.75px;
@@ -537,6 +537,7 @@ max-width: 100%;
   box-shadow: inset 4px 0 0 0 var(--clr-accent);
   background-color: var(--clr-secondary);
   padding: 1em;
+  font-family: var(--ff-header);
   font-style: italic;
   }
   .post pre {
