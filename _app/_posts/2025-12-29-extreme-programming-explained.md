@@ -50,7 +50,7 @@ This layering matters. Practices without values are mechanical rituals. Values w
 
 ## The Five Values of XP
 
-**Communication**
+### Communication
 
 Communication is the most important value in XP. Many problems in software development (missed expectations, defects, rework, etc.) can be traced back to insufficient or ineffective communication.
 
@@ -58,11 +58,11 @@ XP practitioners value frequent, direct interaction between developers, customer
 
 > “Given the choice between an extremely skilled loner and a competent-but-social programmer, XP teams consistently choose the more social candidate."
 
-**Simplicity**
+### Simplicity
 
 XP asks teams to continually consider: what is the simplest thing that could possibly work? Simplicity enables faster delivery and clearer feedback. Importantly, Kent notes that simplicity is contextual: what is "simple" today may not be so "simple" tomorrow.
 
-**Feedback**
+### Feedback
 
 Early in the book, Beck introduces a simple but powerful metaphor: software development is like driving.
 
@@ -72,11 +72,11 @@ In the same way, feedback helps ensure software teams hit their target. Feedback
 
 > “The XP philosophy is to start where you are now and move towards the ideal. From where you are now, could you improve a little bit?”
 
-**Courage**
+### Courage
 
 Software development is inherently uncertain and often uncomfortable. Courage is required to speak uncomfortable truths, discard failing solutions, and make changes when new information emerges.
 
-**Respect**
+### Respect
 
 Respect means recognizing that no role is intrinsically more valuable than another and that software development is a collective effort. Without respect for people, ideas, and the system, no set of practices can succeed.
 
@@ -88,29 +88,29 @@ In contrast to the loftiness of values, practices are concrete. They are specifi
 
 Kent supplies a a core set of practices that he recommends starting with. They've been carefully designed to fit together. Each reinforces the others, often in service of more than one value.
 
-**Sit together**
+### Sit together
 
 Teams need a thoughfully designed collaborative space so that the barriers to interaction are minimized. In the early 2000s, this could easily be accomplished by having everyone sit together in the same room.
 
 In an era of distributed teams, this is more difficult (though still possible). Use collaborative tools that broadcast availability, allow for interuption, and enable quick face to face contact.
 
-**Whole team**
+### Whole team
 
 Stop thinking of the "development" team as a group of software developers. A successful product can only be built by a cross-functional team that includes all the skills and perspectives necessary for the project to succeed. This will likely include customers, business analysts, user experience specialists, software developers, and marketers.
 
 > "Sharing power is pragmatic, not idealistic."
 
-**Informative workspace**
+### Informative workspace
 
 Ensure your workspace makes important information visible. It should be immediately obvious who is working on what, what work has been prioritized, and how the team is doing with respect to their goals.
 
-**Energized Work**
+### Energized Work
 
 Workers should work only as many hours as they can remain productive and at a pace that is sustainable.
 
 > “Software development is a game of insight, and insight comes to the prepared, rested, relaxed mind.”
 
-**Pair Programming**
+### Pair Programming
 
 Having two developers simultanouesly design, test, and implement new features affords numerous benefits. The collaborators keep each other on task, continuously review each other's work, improve each other's designs, and hold each other accountable to team practices.
 
@@ -118,17 +118,17 @@ Numerous studies have shown that (counterintuitively), pair programming ensures 
 
 > “Pair programmers keep each other on task. Brainstorm refinements to the system. Clarify ideas. Take initiative when their partner is stuck, thus lowering frustration."
 
-**Stories**
+### Stories
 
 Plan work using [user stories](https://nickarora.github.io/blog/user-stories-applied), minimal, natural language descriptions of features, written from a user’s perspective. Unlike rigid, detailed requirement documents, user stories force force business and technical professionals to interact. In doing so, the team aligns on what precisely what is required, why its valuable, and how long it will take.
 
-**Continuous integration**
+### Continuous integration
 
 Programming complex applications is often a divide, conquer, and integrate problem. Beck recommends working in small increments and integrating changes into the whole application frequently (after no more than a couple of hours).
 
 Continuous integration provides evidence that the system works and forces the team to remain coordinated.
 
-**Test-First Programming**
+### Test-First Programming
 
 [Test-first programming](https://nickarora.github.io/blog/test-driven-development) is a technique for building software where the developer _begins_ by writing a failing test. He or she then should implement the bare minimum to get the software working. Finally, the code is refactored to improve the design.  The technique is often summarized as "_Red_, _Green_, _Refactor_".
 
